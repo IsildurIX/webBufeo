@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bufeo, Amazon&iacute;a y Arte</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/bufeostyle.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-white shadow-sm px-4">
+        <a class="navbar-brand" href="../../index.html" aria-label="Bufeo, Amazonia y Arte">
+            Bufeo, Amazonia y Arte
+        </a>
+        <div class="d-flex align-items-center">
+            <button class="menu-button d-none d-md-block" id="openMenu" aria-label="Abrir menú"></button>
+            <button class="hamburger-button d-block d-md-none" id="openHamburgerMenu"
+                aria-label="Abrir menú hamburguesa">
+                ☰
+            </button>
+        </div>
+    </nav>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="btn btn-link text-white position-absolute top-0 end-0 mt-3 me-3" id="closeMenu"
+            aria-label="Cerrar menú">&times;</button>
+        <div id="menuList" role="menu">
+            <a href="#" class="menu-item" data-submenu="submenu1" role="menuitem" aria-expanded="false"
+                aria-controls="submenu1">Exposiciones</a>
+            <a href="#" class="menu-item" data-submenu="submenu2" role="menuitem" aria-expanded="false"
+                aria-controls="submenu2">Proyectos</a>
+            <a href="#" class="menu-item" data-submenu="submenu3" role="menuitem" aria-expanded="false"
+                aria-controls="submenu3">Publicaciones</a>
+            <a href="#" class="menu-item" data-submenu="submenu4" role="menuitem" aria-expanded="false"
+                aria-controls="submenu4">Gente Bufeo</a>
+        </div>
+
+        <div id="submenu1" class="submenu" aria-labelledby="submenu1">
+            <a href="#" class="menu-item" role="menuitem" data-submenu="submenu1d">2009 - 2012</a>
+            <a href="#" class="menu-item" role="menuitem" data-submenu="submenu1c">2013 - 2016</a>
+            <a href="#" class="menu-item" role="menuitem" data-submenu="submenu1b">2017 - 2020</a>
+            <a href="#" class="menu-item" role="menuitem" data-submenu="submenu1a">2021 - 2024</a>
+        </div>
+        <div id="submenu2" class="submenu" aria-labelledby="submenu2">
+            <a href="../proyectos/balsabufeo.html" class="menu-item" role="menuitem">Flotando La Balsa Bufeo</a>
+            <a href="#" class="menu-item" role="menuitem">Visiones sonoras</a>
+            <a href="#" class="menu-item" role="menuitem">Amazonismos</a>
+        </div>
+        <div id="submenu3" class="submenu" aria-labelledby="submenu3">
+            <a href="../libros/amazonistas.html" class="menu-item" role="menuitem">Amazonistas</a>
+            <a href="#" class="menu-item" role="menuitem">Subitem 3B</a>
+            <a href="#" class="menu-item" role="menuitem">Subitem 3C</a>
+        </div>
+
+        <div id="submenu1a" class="submenu" aria-labelledby="submenu1a">
+            <a href="../exposicion/metsanete.html" class="menu-item" role="menuitem">Metsa Nete</a>
+            <a href="../exposicion/largollanto.html" class="menu-item" role="menuitem">De su largo llanto</a>
+            <a href="../exposicion/laselvamisma.html" class="menu-item" role="menuitem">La selva misma</a>
+        </div>
+
+        <div id="submenu1b" class="submenu" aria-labelledby="submenu1b">
+            <a href="../exposicion/bosquemitos.html" class="menu-item" role="menuitem">El bosque de los mitos</a>
+            <a href="../exposicion/nochegardenias.html" class="menu-item" role="menuitem">La noche de las gardenias</a>
+            <a href="../exposicion/lagarzablanca.html" class="menu-item" role="menuitem">La garza blanca</a>
+        </div>
+
+        <div id="submenu1c" class="submenu" aria-labelledby="submenu1c">
+            <a href="#" class="menu-item" role="menuitem">SVSS</a>
+            <a href="../exposicion/milagroverde.html" class="menu-item" role="menuitem">El milagro verde</a>
+            <a href="../exposicion/lagarzablanca.html" class="menu-item" role="menuitem">La garza blanca</a>
+        </div>
+
+        <div id="submenu1d" class="submenu" aria-labelledby="submenu1d">
+            <a href="../exposicion/poderverde.html" class="menu-item" role="menuitem">Poder Verde 1</a>
+            <a href="#" class="menu-item" role="menuitem">Selva virgen, salvaje y sensual</a>
+            <a href="../exposicion/milagroverde.html" class="menu-item" role="menuitem">El milagro verde</a>
+        </div>
+    </div>
+
+    <!-- Fullscreen image section -->
+    <!-- Fullscreen image section -->
+    <div class="contenido-principal">
+        <div>
+            <h1>SVSS: Selva Virgen, Salvaje y Sensual</h1>
+            <p>Curaduria: Christian Bendayan<br>
+                Año: 2012<br>
+                Lugar: CC. ICPNA Miraflores</p>
+            <p class="contenido-font">
+                SVSS es una exposición que presenta desde la mirada de diez fotógrafos –ninguno de ellos nacido en la
+                Amazonía– imágenes que revelan momentos, historias, fantasías y mitos en torno a una sociedad excesiva
+                en belleza y vitalidad, y de un espacio único para el pensamiento libre y la vida en armonía con la
+                naturaleza, reinado por el eros y despojado de tabúes para vivir las relaciones sociales y sexuales.
+            </p>
+            <p class="contenido-font">
+                SVSS abrevia el título formal de esta exposición “Selva virgen, salvaje y sensual”, la misma que se
+                presenta como un juego de significado y significante. Primero la selva como un espacio a ser
+                descubierto, conquistado, explorado y explotado, como el concepto que se construyó sobre esta región
+                desde el encuentro de Occidente con la Amazonía y que con los años culminó en la exotización de sus
+                habitantes, llegando a imponer desde Lima tópicos que los mostraban como personas dadas al “desorden
+                moral” y al “pecado carnal”, ensañandose con mayor lascivia hacia la imagen de sus mujeres.
+            </p>
+            <p class="contenido-font">
+                SVSS es también el nombre de un trago afrodisiaco cuyas siglas significan: “Siete veces sin sacarla”. La
+                promesa o realidad de una bebida y también de esta exposición, que a modo de respuesta ante los
+                estereotipos impuestos, nos incita a penetrar en la intimidad de las sociedades amazónicas, experimentar
+                el dolor y el placer que han marcado la búsqueda de una sexualidad auténtica que lucha contra los
+                prejuicios y la discriminación, compuesta de múltiples identidades e identificaciones, con prácticas y
+                visualidades diversas, liberada de la hipocresía de las sociedades mojigatas.
+            </p>
+            <p class="contenido-font">
+                Artistas: Sandro Aguilar, José “Ashuco” Araujo, Antonio Escalante, Morfi Jiménez, Thomas Locke, Marcos
+                López, Carlos Sánchez Giraldo, Musuk Nolte, Gihan Tubbeh, Adrián Portugal, y Rodrigo Rodrich.
+            </p>
+            
+        </div>
+    </div>
+
+    <section class="contenido-grilla">
+        <div class="container">
+            <!-- Primera fila -->
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
+                        src="../../assets/img/fondoblanco.png" alt="Imagen 1">
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img src="../../assets/img/imgExpo/01/IMG_8947.JPG"
+                        alt="Imagen 2" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal"></div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
+                        src="../../assets/img/fondoblanco.png" alt="Imagen 3">
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img src="../../assets/img/imgExpo/01/IMG_8951.JPG"
+                        alt="Imagen 4" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal"></div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
+                        src="../../assets/img/fondoblanco.png" alt="Imagen 5">
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img src="../../assets/img/imgExpo/01/IMG_8963.JPG"
+                        alt="Imagen 6" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal"></div>
+            </div>
+            <!-- Segunda fila -->
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img src="../../assets/img/imgExpo/01/IMG_8968.JPG"
+                        alt="Imagen 7" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal"></div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
+                        src="../../assets/img/fondoblanco.png" alt="Imagen 8">
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2" class="img-fluid" data-bs-toggle="modal"
+                    data-bs-target="#imageModal"><img src="../../assets/img/imgExpo/01/IMG_8984.JPG" alt="Imagen 9">
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
+                        src="../../assets/img/fondoblanco.png" alt="Imagen 10">
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img src="../../assets/img/imgExpo/01/IMG_9021.JPG"
+                        alt="Imagen 11" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal"></div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
+                        src="../../assets/img/fondoblanco.png" alt="Imagen 12">
+                </div>
+            </div>
+            <!-- Tercera fila -->
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
+                        src="../../assets/img/fondoblanco.png" alt="Imagen 13">
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
+                        src="../../assets/img/fondoblanco.png" alt="Imagen 14">
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
+                        src="../../assets/img/fondoblanco.png" alt="Imagen 15">
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img src="../../assets/img/imgExpo/01/IMG_9029.JPG"
+                        alt="Imagen 16" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal"></div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
+                        src="../../assets/img/fondoblanco.png" alt="Imagen 17">
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
+                        src="../../assets/img/fondoblanco.png" alt="Imagen 18">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para Zoom -->
+    <div class="modal fade-custom" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center position-relative">
+                    <button id="prevImage"
+                        class="btn btn-secondary position-absolute start-0 top-50 translate-middle-y">
+                        <img src="../../assets/img/back.png" alt="Botón imagen previa" class="btn-img btn-izquierda">
+                    </button>
+                    <img id="zoomedImage" src="" alt="Imagen ampliada" class="img-fluid">
+                    <button id="nextImage"
+                        class="btn btn-secondary position-absolute end-0 top-50 translate-middle-y"><img
+                            src="../../assets/img/forward.png" alt="Botón imagen previa" class="btn-img"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="bg-grishumo text-dark pt-4">
+        <div class="container">
+            <div class="row">
+                <!-- Primera columna -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <h5>Bufeo Amazon&iacute;a + arte</h5>
+                    <p>bufeo.amazoniayarte@gmail.com<br>+51 986 336 866</p>
+                </div>
+                <!-- Segunda columna -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <h5>Redes Sociales:</h5>
+                    <ul class="list-unstyled d-flex">
+                        <li class="me-3">
+                            <a href="#" target="_blank" class="text-dark text-decoration-none">
+                                <i class="fab fa-facebook fa-2x"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank" class="text-dark text-decoration-none">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Tercera columna -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <h5>Todos los derechos reservados</h5>
+                </div>
+                <!-- Cuarta columna -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <h5>Con el apoyo de:</h5>
+                    <ul class="list-unstyled d-flex">
+                        <li class="me-3">
+                            <div class="col-md-6">
+                                <img src="../../assets/img/spda.jpg" alt="spdalogo" class="img-fluid">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="col-md-6">
+                                <img src="../../assets/img/spda.jpg" alt="spdalogo" class="img-fluid">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const openMenu = document.getElementById('openMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const menuList = document.getElementById('menuList');
+        const submenus = document.querySelectorAll('.submenu');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        openMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menuOverlay.classList.add('show');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            menuOverlay.classList.remove('show');
+            menuList.style.display = 'flex';
+            hideAllSubmenus();
+        });
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const submenuId = item.getAttribute('data-submenu');
+                const submenu = document.getElementById(submenuId);
+
+                if (submenu) {
+                    menuList.style.display = 'none';
+                    hideAllSubmenus();
+                    submenu.classList.add('show');
+                }
+
+                // Show sub-submenu when clicking on specific item
+                if (item.dataset.submenu === 'submenu1a') {
+                    const submenu1a = document.getElementById('submenu1a');
+                    submenu1a.classList.add('show');
+                }
+                // Show sub-submenu when clicking on specific item
+                if (item.dataset.submenu === 'submenu1b') {
+                    const submenu1b = document.getElementById('submenu1b');
+                    submenu1b.classList.add('show');
+                }
+                // Show sub-submenu when clicking on specific item
+                if (item.dataset.submenu === 'submenu1c') {
+                    const submenu1c = document.getElementById('submenu1c');
+                    submenu1c.classList.add('show');
+                }
+            });
+        });
+
+        function hideAllSubmenus() {
+            submenus.forEach(submenu => submenu.classList.remove('show'));
+        }
+
+        menuOverlay.addEventListener('click', (e) => {
+            if (e.target === menuOverlay) {
+                menuOverlay.classList.remove('show');
+                menuList.style.display = 'flex';
+                hideAllSubmenus();
+            }
+        });
+
+        menuList.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+        // Selección de imágenes y elementos del modal
+        const images = document.querySelectorAll('.contenido-grilla img:not(.no-zoom)');
+        const zoomedImage = document.getElementById('zoomedImage');
+        const imageModal = document.getElementById('imageModal');
+        const prevButton = document.getElementById('prevImage');
+        const nextButton = document.getElementById('nextImage');
+        let currentIndex = 0;
+
+        // Inicializar el modal de Bootstrap
+        const bootstrapModal = new bootstrap.Modal(imageModal);
+
+        // Mostrar la imagen en el modal
+        function showImage(index) {
+            const src = images[index].getAttribute('src');
+            if (src) {
+                zoomedImage.setAttribute('src', src);
+                currentIndex = index;
+            } else {
+                console.error('No se encontró el atributo src en la imagen seleccionada.');
+            }
+        }
+
+        // Abrir el modal al hacer clic en una imagen
+        images.forEach((image, index) => {
+            image.addEventListener('click', () => {
+                showImage(index);
+                bootstrapModal.show();
+            });
+        });
+
+        // Navegar a la imagen anterior
+        prevButton.addEventListener('click', (e) => {
+            e.stopPropagation(); // Evitar cerrar el modal
+            currentIndex = (currentIndex - 1 + images.length) % images.length; // Navegación circular
+            showImage(currentIndex);
+        });
+
+        // Navegar a la siguiente imagen
+        nextButton.addEventListener('click', (e) => {
+            e.stopPropagation(); // Evitar cerrar el modal
+            currentIndex = (currentIndex + 1) % images.length; // Navegación circular
+            showImage(currentIndex);
+        });
+
+        // Cerrar el modal al hacer clic fuera de la imagen
+        imageModal.addEventListener('click', () => {
+            bootstrapModal.hide();
+        });
+
+        // Limpiar la imagen al cerrar el modal
+        imageModal.addEventListener('hidden.bs.modal', () => {
+            zoomedImage.setAttribute('src', '');
+        });
+
+
+        const openHamburgerMenu = document.getElementById('openHamburgerMenu');
+
+        openHamburgerMenu.addEventListener('click', () => {
+            menuOverlay.classList.add('show');
+        });
+
+
+    </script>
+
+</body>
+
+</html>

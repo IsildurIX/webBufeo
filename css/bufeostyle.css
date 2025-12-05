@@ -1,0 +1,1128 @@
+/* 1. Tipografías */
+@font-face {
+  font-family: 'Futura Md BT';
+  src: url('../assets/fonts/futuramdbt_bold-webfont.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Futura Light BT V1';
+  src: url('../assets/fonts/Futura_Light_BT_V1.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* 2. Estilos globales */
+body {
+  padding-top: var(--nav-h) !important;
+  /* antes: 70px fijos */
+}
+
+.bg-grishumo {
+  background-color: #F8F9FA;
+}
+
+.logo-alianza {
+  height: auto;
+  width: auto;
+  object-fit: contain;
+}
+
+.spda-logo {
+  max-height: 60px;
+}
+
+.fbn-logo {
+  max-height: 54px;
+}
+
+/* 4. Menú (overlay y botones) */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 1050;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.3s, transform 0.3s ease;
+}
+
+.menu-overlay.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-overlay a {
+  font-family: 'Futura Md BT', sans-serif;
+  font-size: 5.5rem;
+  margin: 1rem;
+  color: #FF7B8E;
+  text-decoration: none;
+}
+
+.menu-overlay a:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* Botón principal del menú (desktop) */
+.menu-button {
+  cursor: pointer;
+  border: none;
+  padding: .5rem .75rem;
+  border-radius: 2rem;
+  background: #ffffff;
+  color: #000000;
+  font-family: 'Futura Md BT', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.menu-button img {
+  height: 1.2rem;
+  width: auto;
+}
+
+.menu-button:hover {
+  transform: translateY(-1px);
+  background: #f7f7f7;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+}
+
+.menu-button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+}
+
+/* Estilos del botón y menú en pantallas pequeñas */
+.hamburger-button {
+  background-color: white;
+  border-radius: 50px;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Icono */
+.hamburger-button span {
+  display: inline-block;
+  margin-left: 6px;
+}
+
+/* Contenedor para la imagen y el botón en pantallas pequeñas */
+.menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Texto interior */
+.menu-item {
+  font-family: 'Futura Md BT', sans-serif;
+  font-size: 2.5rem;
+  margin: 1rem;
+  color: #ff1d25;
+  text-decoration: none;
+  text-align: right;
+}
+
+.menu-item:hover {
+  text-decoration: underline;
+}
+
+.submenu {
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 2rem;
+}
+
+.submenu.show {
+  display: flex;
+}
+
+/* 5. Contenido principal */
+.contenido-font {
+  font-family: 'Futura Light BT V1', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: justify;
+  color: #fff;
+  margin: 1rem 0;
+  /* asegura que texto largo no cause scroll horizontal */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenido-principal,
+.contenido-proyecto {
+  padding: 2rem;
+}
+
+/* Para asegurar que el contenido principal no se superponga con navbar fijo */
+.contenido-principal .container,
+.contenido-proyecto .container {
+  margin-top: 2rem;
+}
+
+.contenido-grilla {
+  padding: 2rem;
+}
+
+/* Imágenes de la galería */
+.contenido-grilla img {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Cuadrado perfecto */
+  object-fit: cover;   /* Mantiene el contenido dentro del cuadrado sin deformarse */
+}
+
+/* Sección de texto de entrada (debajo de la grilla) */
+.contenido-entrada {
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.contenido-entrada .container {
+  text-align: justify;
+}
+
+/* Texto de la descripción del proyecto */
+.contenido-entrada p {
+  font-family: 'Futura Light BT V1', sans-serif;
+  color: #FF7B8E;
+  font-size: 1rem;
+}
+
+/* Títulos dentro de la entrada */
+.contenido-entrada h3 {
+  margin-bottom: 1rem;
+  font-family: 'Futura Md BT', sans-serif;
+  color: #FF7B8E;
+}
+
+.contenido-entrada h1 {
+  margin-top: 2rem;
+  font-family: 'Futura Md BT', sans-serif;
+  color: #FF7B8E;
+}
+
+/* 6. Fondos */
+.fullscreen-image {
+  position: relative;
+  background: url('../assets/img/fondo1.png') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  padding: 2rem;
+}
+
+.fullscreen-image h1 {
+  font-size: 3rem;
+  font-family: 'Futura Md BT', sans-serif;
+  text-transform: uppercase;
+}
+
+.text-overlay {
+  position: relative;
+  background: url('../assets/img/fondo2.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.text-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg,
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.8));
+  z-index: 1;
+}
+
+.text-overlay h2 {
+  position: relative;
+  z-index: 2;
+  font-size: 2.5rem;
+  font-family: 'Futura Md BT', sans-serif;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+/* Texto principal dentro del overlay */
+.text-overlay h5 {
+  position: relative;
+  z-index: 2;
+  font-family: 'Futura Light BT V1', sans-serif;
+  font-size: 1.4rem;
+  color: #FF7B8E;
+  z-index: 2;
+  text-align: start;
+  line-height: 1.6;
+}
+
+.text-overlay p {
+  position: relative;
+  z-index: 2;
+  font-family: 'Futura Md BT', sans-serif;
+  color: #FF7B8E;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.text-overlay h5 {
+  font-size: 1.2rem;
+  color: #FF7B8E;
+}
+
+.text-overlay p {
+  font-size: 1rem;
+}
+
+/* 7. Modal de Imagen */
+.modal-dialog {
+  max-width: 80%;
+  max-height: 80%;
+  margin: auto;
+}
+
+.modal-content {
+  background-color: transparent;
+  border: none;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+/* Botón de cierre (X) */
+.btn-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  z-index: 2;
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 50%;
+}
+
+/* Navegación (flechas) */
+.modal-navigation {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 20px;
+  z-index: 2;
+}
+
+.nav-arrow {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Imagen */
+#zoomedImage {
+  max-width: 100%;
+  max-height: 80vh;
+  margin: auto;
+  display: block;
+}
+
+/* 7. Responsividad */
+@media (max-width: 768px) {
+  .fullscreen-image h1 {
+    font-size: 2rem;
+  }
+
+  .text-overlay h2 {
+    font-size: 1.8rem;
+  }
+
+  .contenido-principal,
+  .contenido-proyecto {
+    padding: 1.5rem;
+  }
+
+  .contenido-principal .container,
+  .contenido-proyecto .container {
+    margin-top: 1rem;
+  }
+
+  .fullscreen-image,
+  .text-overlay {
+    padding: 1.5rem;
+  }
+
+  .contenido-entrada {
+    padding: 0.5rem;
+  }
+
+  .contenido-entrada h1 {
+    font-size: 1.5rem;
+  }
+
+  .contenido-entrada h3 {
+    font-size: 1.2rem;
+  }
+
+  .contenido-entrada p {
+    font-size: 0.95rem;
+  }
+
+  .modal-dialog {
+    max-width: 95%;
+    max-height: 95%;
+  }
+
+  .modal-body {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .contenido-grilla img {
+    margin-bottom: 1rem;
+  }
+}
+
+/* ===== Bufeo – Héroe alineado a la izquierda (override) ===== */
+.hero-container {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+  /* anula margin:0 auto */
+}
+
+.hero-copy {
+  margin: 0;
+  /* evita centrado */
+  max-width: none;
+  /* usa todo el ancho disponible del contenedor */
+  padding-left: 0;
+  margin-left: 3rem;
+  text-align: left;
+}
+
+/* En móviles, margen más pequeño y ancho 100% */
+@media (max-width: 767.98px) {
+  .hero-copy {
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  .hero-container {
+    justify-content: flex-start;
+  }
+
+  .fullscreen-image h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Ajuste extra en mobile muy estrecho */
+@media (max-width: 575.98px) {
+  .hero-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+    padding-left: .25rem;
+  }
+}
+
+/* ===== Bufeo – Mobile overflow + hero margin FIX v3 (añadido por ChatGPT) ===== */
+
+/* 1) Evitar scroll horizontal global */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden !important;
+}
+
+/* 2) Héroe y overlay: NO alturas fijas; dejan crecer al contenido */
+.fullscreen-image,
+.text-overlay {
+  height: auto !important;
+  min-height: 60vh;
+}
+
+/* 3) Héroe alineado a la izquierda con margen controlado */
+.hero-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* El bloque hero-copy se mantiene, pero afinamos márgenes */
+.hero-copy {
+  margin-left: 3rem;
+  margin-right: 1.5rem;
+  max-width: 900px;
+}
+
+/* 4) Ajuste de márgenes y alturas por breakpoint */
+
+/* Móviles */
+@media (max-width: 575.98px) {
+
+  .fullscreen-image,
+  .text-overlay {
+    padding: 1.5rem 1rem 2.5rem;
+    min-height: 75vh;
+  }
+
+  .hero-container {
+    justify-content: flex-start;
+  }
+
+  .hero-copy {
+    margin-left: 1.25rem;
+    margin-right: 1rem;
+    max-width: 100%;
+  }
+}
+
+/* Tablets y pantallas medianas */
+@media (min-width: 576px) and (max-width: 991.98px) {
+
+  .fullscreen-image,
+  .text-overlay {
+    padding: 2rem 2.5rem;
+    min-height: 80vh;
+  }
+
+  .hero-copy {
+    margin-left: 2.5rem;
+    margin-right: 2rem;
+  }
+}
+
+/* Desktop grande */
+@media (min-width: 992px) {
+
+  .fullscreen-image,
+  .text-overlay {
+    padding: 2.5rem 3.5rem;
+    min-height: 90vh;
+  }
+
+  .hero-copy {
+    margin-left: 4rem;
+    margin-right: 3rem;
+    max-width: 1100px;
+  }
+}
+
+/* 5) Tipografía fluida para evitar desbordes en títulos largos */
+.fullscreen-image h1 {
+  font-size: clamp(24px, 6.2vw, 48px);
+  line-height: 1.15;
+}
+
+.fullscreen-image h3 {
+  font-size: clamp(16px, 3.9vw, 28px);
+  line-height: 1.20;
+}
+
+.fullscreen-image h4 {
+  font-size: clamp(14px, 3.2vw, 22px);
+  line-height: 1.25;
+}
+
+.fullscreen-image h5 {
+  font-size: clamp(12px, 3.0vw, 18px);
+  line-height: 1.25;
+}
+
+/* 6) Antidesborde de palabras */
+.fullscreen-image,
+.hero-copy,
+.text-overlay {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* 7) Asegurar que imágenes, videos y canvas no provoquen scroll horizontal */
+img,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* === Igualar tamaño entre contenido-grilla y contenido-principal === */
+.contenido-grilla,
+.contenido-principal {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Altura similar y adaptable */
+.contenido-grilla {
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+.contenido-principal {
+  min-height: 60vh;
+}
+
+/* Ajustes responsivos opcionales */
+@media (min-width: 768px) {
+  .contenido-grilla {
+    min-height: 85vh;
+  }
+
+  .contenido-principal {
+    min-height: 80vh;
+  }
+}
+
+/* === FIN FIX === */
+
+/* 8. Estilos específicos del footer */
+footer h5 {
+  font-size: 1rem;
+  margin-bottom: .5rem;
+}
+
+footer {
+  font-size: 0.9rem;
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+}
+
+footer li {
+  list-style: none;
+}
+
+footer .fab {
+  font-size: 1.4rem;
+}
+
+/* Forzar el tamaño del logo en el footer si lo deseas */
+footer .logo-footer img {
+  max-height: 50px;
+  width: auto;
+}
+
+/* ====== TIMELINE NUEVO – BUFEO ====== */
+
+.timeline-bufeo {
+  background: #ff7ba7; /* Color de fondo rosado */
+  padding: 40px 0;
+  color: #fff;
+  position: relative;
+}
+
+/* Por defecto queremos una sola línea blanca centrada de ancho limitado */
+.timeline-bufeo .timeline-inner::before {
+  content: "";
+  position: absolute;
+  top: 62px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 880px;
+  height: 2px;
+  background: #ffffff;
+  opacity: 0.9;
+}
+
+/* Contenedor interno del timeline, se usa para posicionar la línea correctamente */
+.timeline-bufeo .timeline-inner {
+  position: relative;
+}
+
+/* TITULOS y TEXTOS dentro del timeline */
+.t-item h3 {
+  font-weight: 700;
+}
+
+/* Texto secundario */
+.t-item p {
+  font-family: 'Futura Light BT V1', sans-serif;
+  margin-bottom: 0.3rem;
+}
+
+/* En pantallas grandes */
+/* .timeline-inner {
+  width: 960px;
+}
+*/
+
+.timeline-inner {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* ==== Responsivo general de la sección timeline ==== */
+
+/* Para pantallas medianas hacia abajo, quitamos la línea blanca principal
+   (porque el layout se vuelve de una sola columna y ya no calza bien)
+*/
+@media (max-width: 992px) {
+  .timeline-bufeo .timeline-inner::before {
+    display: none;
+  }
+}
+
+/* ====== 11. Visiones Sonoras – Bufeo y Proyectos Fortalecidos ====== */
+/* Sección completa */
+.visiones-proyectos {
+  background-color: #ffffff;
+  padding: 3rem 0;
+}
+
+/* Títulos de bloque */
+.titulo-proyectos {
+  font-family: 'Futura Md BT', sans-serif;
+  color: #FF7B8E;
+  font-size: 2rem;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+/* Contenedor de cada tarjeta de proyecto (video + texto) */
+.proyecto-card {
+  margin-bottom: 2rem;
+}
+
+/* Wrapper de la imagen-miniatura o video */
+.video-thumb {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* Imagen miniatura */
+.video-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Icono de "play" superpuesto (simple) */
+.video-thumb::after {
+  content: "▶";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+/* hover suave sobre el thumbnail */
+.video-thumb:hover {
+  filter: brightness(1.05);
+}
+
+/* Texto descriptivo debajo de cada proyecto */
+.video-caption {
+  font-family: 'Futura Light BT V1', sans-serif;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: .5rem;
+}
+
+/* ========== Sección rosada final de “Visiones Bufeo” ========== */
+
+.visiones-rosa {
+  background-color: #ff7ba7;
+  padding: 4rem 0;
+}
+
+/* Texto principal de la sección rosada */
+.visiones-rosa-text {
+  font-family: 'Futura Md BT', sans-serif;
+  font-size: 2rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Ajuste para el texto pequeño en la sección rosada,
+   aquí asumimos que los párrafos usan .video-caption (puedes cambiarlo si fuera otra clase) */
+.visiones-rosa .video-caption {
+  color: #ffffff;
+}
+
+/* Responsivo */
+@media (max-width: 767.98px) {
+  .visiones-rosa-text {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .visiones-rosa .video-caption {
+    text-align: center;
+  }
+}
+
+/* ===== Bufeo – estructura general de secciones ===== */
+
+/* Aseguramos mínimo de altura para las secciones principales,
+   para que se parezcan visualmente */
+.contenido-principal,
+.contenido-proyecto,
+.contenido-grilla {
+  min-height: 60vh;
+}
+
+/* En pantallas más grandes, aumentamos un poco la altura mínima */
+@media (min-width: 992px) {
+
+  .contenido-principal,
+  .contenido-proyecto,
+  .contenido-grilla {
+    min-height: 80vh;
+  }
+}
+
+/* ===== Bufeo – Refuerzo del ancho y centrado interno ===== */
+
+/* Centramos el contenido del contenedor interno para que no quede “suelto” a la izquierda */
+.contenido-principal .container,
+.contenido-proyecto .container,
+.contenido-grilla .container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* ===== Bufeo – Ajuste extra para la sección rosa y proyectos ===== */
+
+.visiones-proyectos .container,
+.visiones-rosa .container {
+  max-width: 1140px;
+}
+
+/* ===== Bufeo – Ajustes para el timeline (estructura responsiva completa) ===== */
+
+/* Bloques de fecha y texto apilados en filas */
+.timeline-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* Cada columna del timeline */
+.timeline-col {
+  flex: 1 1 260px;
+}
+
+/* Título de año */
+.t-year {
+  font-family: 'Futura Md BT', sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Texto interior (descripción) */
+.t-desc {
+  font-family: 'Futura Light BT V1', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* ====== TIMELINE NUEVO – BUFEO (ESTRUCTURA GRID) ====== */
+
+/* Contenedor principal del timeline */
+.timeline-inner {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* Contenedor de cada fila (parte superior e inferior del timeline) */
+.timeline-row--top,
+.timeline-row--bottom {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+/* Aseguramos centrado vertical y separación */
+.timeline-row--top {
+  margin-bottom: 2rem;
+}
+
+/* En pantallas medianas, pasamos a 2 columnas */
+@media (max-width: 992px) {
+
+  .timeline-row--top,
+  .timeline-row--bottom {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* En pantallas pequeñas, 1 columna */
+@media (max-width: 576px) {
+
+  .timeline-row--top,
+  .timeline-row--bottom {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Estilo de cada “item” del timeline */
+.t-item {
+  position: relative;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+/* Título principal del ítem (por ej. año) */
+.t-item h3 {
+  font-family: 'Futura Md BT', sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 0.35rem;
+}
+
+/* Texto */
+.t-item p {
+  font-family: 'Futura Light BT V1', sans-serif;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Destacados (cursivas) */
+.t-item em {
+  font-style: italic;
+}
+
+/* ===== Línea blanca principal (ajustada al “top row”) ===== */
+
+/* Contenedor de la fila superior: lo usamos como referencia para la línea */
+.timeline-row--top {
+  position: relative;
+}
+
+/* La línea blanca ahora se dibuja ANCLADA a la fila superior, no al total */
+.timeline-row--top::after {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: -8px;
+  height: 2px;
+  background: #ffffff;
+  opacity: 0.9;
+}
+
+/* En pantallas más pequeñas la ocultamos para no romper el layout */
+@media (max-width: 992px) {
+  .timeline-row--top::after {
+    display: none;
+  }
+}
+
+/* ===== Bufeo – proyecto: hover y realce de tarjetas de video ===== */
+
+/* Caja de proyecto (miniatura de video) */
+.proyecto-card {
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Elevación y sombra en hover */
+.proyecto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
+}
+
+/* Ajuste de la miniatura */
+.video-thumb {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+/* Opcional: animación ligera en la imagen */
+.video-thumb img {
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.proyecto-card:hover .video-thumb img {
+  transform: scale(1.02);
+  filter: brightness(1.08);
+}
+
+/* Pie de foto (caption) debajo del proyecto */
+.video-caption {
+  font-family: 'Futura Light BT V1', sans-serif;
+  font-size: 0.9rem;
+  color: #FF7B8E;
+  margin-top: .5rem;
+}
+
+/* ===== Ajuste de la sección "Visiones Bufeo" (rosa) ===== */
+
+.visiones-rosa {
+  background-color: #ff7ba7;
+  padding: 4rem 0;
+}
+
+/* Título grande */
+.visiones-rosa-text {
+  font-family: 'Futura Md BT', sans-serif;
+  font-size: 2rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Subtexto / descripción */
+.visiones-rosa .video-caption {
+  color: #ffffff;
+}
+
+/* Responsivo */
+@media (max-width: 767.98px) {
+  .visiones-rosa-text {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .visiones-rosa .video-caption {
+    text-align: center;
+  }
+}
+
+/* ===== Sección de proyectos con fondo blanco ===== */
+
+.visiones-proyectos {
+  background-color: #ffffff;
+  padding: 3rem 0;
+}
+
+.titulo-proyectos {
+  font-family: 'Futura Md BT', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  color: #000;
+  margin-bottom: 2rem;
+}
+
+/* ===== Bufeo – VIDEO POPUP (YouTube) ===== */
+
+/* Contenedor responsivo 16:9 para el embed */
+.video-embed {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Modal de video */
+#videoModal .modal-dialog {
+  max-width: 900px;
+  margin: 1.75rem auto;
+}
+
+#videoModal .modal-content {
+  background-color: #000;
+  border: none;
+}
+
+#videoModal .modal-body {
+  padding: 0;
+}
+
+/* El iframe dentro del modal ocupa todo el contenedor */
+#videoModalIframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== Override específico para el modal de video con .ratio ===== */
+
+/* Fix: iframes dentro de .ratio (modales de video) deben ocupar todo */
+.ratio iframe,
+#videoModalIframe {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* ===== Override específico para el modal de VIDEO ===== */
+
+#videoModal .modal-dialog {
+  max-width: 900px;
+  max-height: none;
+  margin: 1.75rem auto;
+}
+
+#videoModal .modal-content {
+  background-color: #000;
+  border: none;
+}
+
+#videoModal .modal-body {
+  padding: 0;
+  display: block;           /* quitar el flex global */
+}
+
+#videoModal .ratio {
+  width: 100%;
+}
+
+#videoModal .ratio iframe {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bufeo, Amazon&iacute;a y Arte</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bufeostyle.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-white shadow-sm">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand" href="#"><img src="assets/img/bufeo_logo.png"></a>
+            <div class="d-flex align-items-center">
+                <button class="menu-button d-none d-sm-block" id="openMenu"></button>
+                <button class="hamburger-button d-block d-md-none" id="openHamburgerMenu">☰</button>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="btn btn-link text-white position-absolute top-0 end-0 mt-3 me-3" id="closeMenu"
+            aria-label="Cerrar menú">&times;</button>
+        <div id="menuList" role="menu">
+            <a href="#" class="menu-item" data-submenu="submenu1" role="menuitem" aria-expanded="false"
+                aria-controls="submenu1">Exposiciones</a>
+            <a href="#" class="menu-item" data-submenu="submenu2" role="menuitem" aria-expanded="false"
+                aria-controls="submenu2">Proyectos</a>
+            <a href="../5.BufeoWeb/articles/publicaciones/publicaciones.html" class="menu-item" data-submenu="submenu3" role="menuitem" aria-expanded="false"
+                aria-controls="submenu3">Publicaciones</a>
+            <a href="#" class="menu-item" data-submenu="submenu4" role="menuitem" aria-expanded="false"
+                aria-controls="submenu4">Gente Bufeo</a>
+        </div>
+
+        <div id="submenu1" class="submenu" aria-labelledby="submenu1">
+            <a href="#" class="menu-item" role="menuitem" data-submenu="submenu1d">2009 - 2012</a>
+            <a href="#" class="menu-item" role="menuitem" data-submenu="submenu1c">2013 - 2016</a>
+            <a href="#" class="menu-item" role="menuitem" data-submenu="submenu1b">2017 - 2020</a>
+            <a href="#" class="menu-item" role="menuitem" data-submenu="submenu1a">2021 - 2024</a>
+        </div>
+        <div id="submenu2" class="submenu" aria-labelledby="submenu2">
+            <a href="articles/proyectos/balsabufeo.html" class="menu-item" role="menuitem">Flotando</a>
+            <a href="#" class="menu-item" role="menuitem">Visiones sonaras</a>
+            <a href="#" class="menu-item" role="menuitem">Amazonismos</a>
+        </div>
+
+        <div id="submenu1a" class="submenu" aria-labelledby="submenu1a">
+            <a href="articles/exposicion/metsanete.html" class="menu-item" role="menuitem">Metsá kené: el hermoso mundo
+                visionario de Chonon Bensho</a>
+            <a href="articles/exposicion/lugarespiritus.html" class="menu-item" role="menuitem">El lugar de los
+                Espíritus</a>
+            <a href="articles/exposicion/kenebo.html" class="menu-item" role="menuitem">Kenebo: cartografías de la
+                eco-cosmología shipibo-conibo</a>
+        </div>
+
+        <div id="submenu1b" class="submenu" aria-labelledby="submenu1b">
+            <a href="articles/exposicion/paisamazonas.html" class="menu-item" role="menuitem">En el país de las
+                Amazonas</a>
+            <a href="articles/exposicion/lagarzablanca.html" class="menu-item" role="menuitem">El clan de la Garza
+                blanca</a>
+            <a href="articles/exposicion/fotosociales.html" class="menu-item" role="menuitem">Fotosociales, retrato de
+                Iquitos</a>
+        </div>
+
+        <div id="submenu1c" class="submenu" aria-labelledby="submenu1c">
+            <a href="articles/exposicion/largollanto.html" class="menu-item" role="menuitem">De su largo llanto se formó
+                el Amazonas</a>
+            <a href="articles/exposicion/laselvamisma.html" class="menu-item" role="menuitem">Calvo de Araujo, la selva
+                misma</a>
+            <a href="articles/exposicion/tierracreacion.html" class="menu-item" role="menuitem">La tierra donde dios no
+                culminó su creación</a>
+        </div>
+
+        <div id="submenu1d" class="submenu" aria-labelledby="submenu1d">
+            <a href="articles/exposicion/poderverde.html" class="menu-item" role="menuitem">Poder Verde 1</a>
+            <a href="articles/exposicion/svss.html" class="menu-item" role="menuitem">Selva virgen, salvaje y
+                sensual</a>
+            <a href="articles/exposicion/milagroverde.html" class="menu-item" role="menuitem">El milagro verde</a>
+        </div>
+    </div>
+
+    <!-- Fullscreen image section -->
+    <section class="fullscreen-image">
+        <div class="hero-container">
+            <div class="hero-copy">
+                <h4>Pr&oacute;ximamente</h4>
+                <h1>LAS MATRACAS DE<br>LA REVOLUCI&Oacute;N</h1>
+                <h4>en</h4>
+                <h3>LA BALSA BUFEO</h3>
+                <h5>Del 17 de mayo al 4 de julio</h5>
+            </div>
+        </div>
+    </section>
+
+    <!-- Text over background image section -->
+    <section class="text-overlay">
+        <div>
+            <h5>Bufeo Amazonía + arte es una organización cultural que investiga, promueve y difunde el arte amazónico
+                peruano. Se fundó el 2015 por Christian Bendayán, artista y curador amazónico peruano.
+                Bufeo ha curado:<br>
+                + de 50 exposiciones de a nivel nacional e internacional y ha publicado<br>
+                + de 10 libros y catálogos</h5>
+        </div>
+    </section>
+
+    <footer class="bg-grishumo text-dark pt-4">
+        <div class="container">
+            <div class="row">
+                <!-- Primera columna -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <h5>Bufeo Amazon&iacute;a + arte</h5>
+                    <p>bufeo.amazoniayarte@gmail.com<br>+51 986 336 866</p>
+                </div>
+                <!-- Segunda columna -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <h5>Redes Sociales:</h5>
+                    <ul class="list-unstyled d-flex">
+                        <li class="me-3">
+                            <a href="#" target="_blank" class="text-dark text-decoration-none">
+                                <i class="fab fa-facebook fa-2x"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank" class="text-dark text-decoration-none">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Tercera columna -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <h5>Todos los derechos reservados</h5>
+                </div>
+                <!-- Cuarta columna -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <h5>En alianza con:</h5>
+                    <ul class="list-unstyled d-flex align-items-center">
+                        <li class="me-3">
+                            <img src="assets/img/spda.jpg" alt="SPDA" class="logo-alianza spda-logo">
+                        </li>
+                        <li>
+                            <img src="assets/img/fbn.png" alt="FBN" class="logo-alianza fbn-logo">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const openMenu = document.getElementById('openMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const menuList = document.getElementById('menuList');
+        const submenus = document.querySelectorAll('.submenu');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        openMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menuOverlay.classList.add('show');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            menuOverlay.classList.remove('show');
+            menuList.style.display = 'flex';
+            hideAllSubmenus();
+        });
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const submenuId = item.getAttribute('data-submenu');
+                const submenu = document.getElementById(submenuId);
+
+                if (submenu) {
+                    menuList.style.display = 'none';
+                    hideAllSubmenus();
+                    submenu.classList.add('show');
+                }
+
+                // Show sub-submenu when clicking on specific item
+                if (item.dataset.submenu === 'submenu1a') {
+                    const submenu1a = document.getElementById('submenu1a');
+                    submenu1a.classList.add('show');
+                }
+
+                // Show sub-submenu when clicking on specific item
+                if (item.dataset.submenu === 'submenu1b') {
+                    const submenu1b = document.getElementById('submenu1b');
+                    submenu1b.classList.add('show');
+                }
+
+                // Show sub-submenu when clicking on specific item
+                if (item.dataset.submenu === 'submenu1c') {
+                    const submenu1c = document.getElementById('submenu1c');
+                    submenu1c.classList.add('show');
+                }
+
+                // Show sub-submenu when clicking on specific item
+                if (item.dataset.submenu === 'submenu1d') {
+                    const submenu1d = document.getElementById('submenu1d');
+                    submenu1d.classList.add('show');
+                }
+            });
+        });
+
+        function hideAllSubmenus() {
+            submenus.forEach(submenu => submenu.classList.remove('show'));
+        }
+
+        menuOverlay.addEventListener('click', (e) => {
+            if (e.target === menuOverlay) {
+                menuOverlay.classList.remove('show');
+                menuList.style.display = 'flex';
+                hideAllSubmenus();
+            }
+        });
+
+        menuList.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+        const openHamburgerMenu = document.getElementById('openHamburgerMenu');
+
+        openHamburgerMenu.addEventListener('click', () => {
+            menuOverlay.classList.add('show');
+        });
+    </script>
+
+</body>
+
+</html>
