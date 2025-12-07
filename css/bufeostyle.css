@@ -4,16 +4,13 @@
   src: url('../assets/fonts/futuramdbt_bold-webfont.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
-  font-display: swap;
 }
-
 
 @font-face {
   font-family: 'Futura Light BT V1';
   src: url('../assets/fonts/Futura_Light_BT_V1.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
 }
 
 
@@ -39,6 +36,33 @@ body {
 
 .fbn-logo {
   max-height: 54px;
+}
+
+/* 3. Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1040;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 0 !important;
+  --bs-navbar-padding-y: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand img {
+  max-height: calc(var(--nav-h) - 10px);
+  display: block;
 }
 
 /* 4. Menú (overlay y botones) */
@@ -78,64 +102,59 @@ body {
   color: #ffffff;
 }
 
-/* Botón principal del menú (desktop) */
+/* Botón con logo (desktop) — normalizado para no estirar el nav */
 .menu-button {
   cursor: pointer;
   border: none;
-  padding: .5rem .75rem;
-  border-radius: 2rem;
-  background: #ffffff;
-  color: #000000;
-  font-family: 'Futura Md BT', sans-serif;
-  font-size: 1rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-}
-
-.menu-button img {
-  height: 1.2rem;
-  width: auto;
+  padding: 0;
+  width: 160px;
+  height: 70px;
+  background-image: url('../assets/img/menu_logo.png') !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  display: inline-block;
+  transform-origin: center;
+  transition: transform 0.25s ease, background-image 0.25s ease;
 }
 
 .menu-button:hover {
-  transform: translateY(-1px);
-  background: #f7f7f7;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+  transform: scale(1.28);
+  background-image: url('../assets/img/menu_hover.png') !important;
 }
 
-.menu-button:active {
-  transform: translateY(0);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+.contenido-entrada .container {
+  text-align: justify;
 }
 
-/* Estilos del botón y menú en pantallas pequeñas */
+/* Botón hamburguesa (móvil) — altura sincronizada */
 .hamburger-button {
-  background-color: white;
-  border-radius: 50px;
-  padding: 8px 12px;
+  font-size: 28px;
+  height: 40px;
+  /* empata con .menu-button */
+  line-height: 1;
+  background: transparent;
   border: none;
   cursor: pointer;
-}
-
-/* Icono */
-.hamburger-button span {
-  display: inline-block;
-  margin-left: 6px;
-}
-
-/* Contenedor para la imagen y el botón en pantallas pequeñas */
-.menu-container {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-/* Texto interior */
+.submenu {
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.submenu.show {
+  display: flex;
+  opacity: 1;
+}
+
 .menu-item {
   font-family: 'Futura Md BT', sans-serif;
   font-size: 2.5rem;
@@ -149,18 +168,13 @@ body {
   text-decoration: underline;
 }
 
-.submenu {
-  display: none;
+#menuList {
+  display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-top: 2rem;
 }
 
-.submenu.show {
-  display: flex;
-}
-
-/* 5. Contenido principal */
+/* 5. Contenidos principales */
 .contenido-font {
   font-family: 'Futura Light BT V1', sans-serif;
   font-size: 1.1rem;
@@ -168,53 +182,69 @@ body {
   text-align: justify;
   color: #fff;
   margin: 1rem 0;
-  /* asegura que texto largo no cause scroll horizontal */
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
 .contenido-principal,
 .contenido-proyecto {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
   padding: 2rem;
+  font-family: 'Futura Md BT', sans-serif;
 }
 
-/* Para asegurar que el contenido principal no se superponga con navbar fijo */
-.contenido-principal .container,
-.contenido-proyecto .container {
-  margin-top: 2rem;
+.contenido-principal div,
+.contenido-proyecto div {
+  margin: 0 auto;
+  max-width: 90%;
+  padding: 0 2rem;
+}
+
+.contenido-entrada {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: left;
+  color: white;
+  padding: 2rem 0;
+  font-family: 'Futura Md BT', sans-serif;
+}
+
+.contenido-principal {
+  background-color: #ff7ba7;
+}
+
+.contenido-proyecto {
+  background-color: #ff7ba7;
 }
 
 .contenido-grilla {
-  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: #fff;
 }
 
-/* Imágenes de la galería */
 .contenido-grilla img {
   width: 100%;
-  aspect-ratio: 1 / 1; /* Cuadrado perfecto */
-  object-fit: cover;   /* Mantiene el contenido dentro del cuadrado sin deformarse */
+  aspect-ratio: 1 / 1;
+  border-radius: 0.25rem;
+  object-fit: cover;
 }
 
-/* Sección de texto de entrada (debajo de la grilla) */
-.contenido-entrada {
-  margin-top: 2rem;
-  padding: 1rem;
-}
-
-.contenido-entrada .container {
-  text-align: justify;
-}
-
-/* Texto de la descripción del proyecto */
 .contenido-entrada p {
   font-family: 'Futura Light BT V1', sans-serif;
   color: #FF7B8E;
   font-size: 1rem;
 }
 
-/* Títulos dentro de la entrada */
 .contenido-entrada h3 {
-  margin-bottom: 1rem;
   font-family: 'Futura Md BT', sans-serif;
   color: #FF7B8E;
 }
@@ -263,28 +293,14 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(120deg,
-      rgba(0, 0, 0, 0.75),
-      rgba(0, 0, 0, 0.35),
-      rgba(0, 0, 0, 0.8));
+  background: rgba(0, 0, 0, 0.7);
   z-index: 1;
 }
 
-.text-overlay h2 {
-  position: relative;
-  z-index: 2;
-  font-size: 2.5rem;
-  font-family: 'Futura Md BT', sans-serif;
-  color: #ffffff;
-  margin-bottom: 1rem;
-}
-
-/* Texto principal dentro del overlay */
 .text-overlay h5 {
   position: relative;
-  z-index: 2;
-  font-family: 'Futura Light BT V1', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1rem;
+  font-family: 'Futura Md BT', sans-serif;
   color: #FF7B8E;
   z-index: 2;
   text-align: start;
@@ -301,69 +317,127 @@ body {
   line-height: 1.6;
 }
 
-.text-overlay h5 {
-  font-size: 1.2rem;
-  color: #FF7B8E;
-}
-
-.text-overlay p {
-  font-size: 1rem;
-}
-
-/* 7. Modal de Imagen */
+/* Ajusta el contenido del modal */
 .modal-dialog {
-  max-width: 80%;
-  max-height: 80%;
+  max-width: 90vw;
+  max-height: 90vh;
   margin: auto;
 }
 
 .modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: transparent;
   border: none;
-}
-
-.modal-body {
   padding: 0;
 }
 
-/* Botón de cierre (X) */
-.btn-close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  z-index: 2;
-  background-color: white;
-  opacity: 0.8;
-  border-radius: 50%;
-}
-
-/* Navegación (flechas) */
-.modal-navigation {
-  position: absolute;
-  top: 50%;
-  width: 100%;
+.modal-body {
+  position: relative;
   display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-  padding: 0 20px;
-  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
-.nav-arrow {
-  background-color: rgba(255, 255, 255, 0.7);
-  border: none;
-  font-size: 2rem;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
+.btn-img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  filter: invert(1);
 }
 
-/* Imagen */
+/* Ajusta la imagen */
+.modal-content img:not(.btn-img) {
+  width: 100%;
+  height: 80vh;
+  display: block;
+  margin: auto;
+}
+
 #zoomedImage {
   max-width: 100%;
-  max-height: 80vh;
-  margin: auto;
+  max-height: 60vh;
   display: block;
+  margin: auto;
+  z-index: 2;
+}
+
+.btn-secondary {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+}
+
+.modal.fade-custom {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.modal.fade-custom.show {
+  opacity: 1;
+}
+
+/* visibilidad por breakpoint */
+.menu-button {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .menu-button {
+    display: block;
+  }
+
+  .hamburger-button {
+    display: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .menu-button {
+    display: none;
+  }
+
+  .hamburger-button {
+    display: inline-flex;
+  }
+}
+
+#prevImage,
+#nextImage {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+#prevImage {
+  left: 10px;
+}
+
+#nextImage {
+  right: 10px;
+}
+
+#prevImage:hover,
+#nextImage:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* 7. Responsividad */
@@ -378,38 +452,54 @@ body {
 
   .contenido-principal,
   .contenido-proyecto {
-    padding: 1.5rem;
+    padding: 1rem;
+    min-height: auto;
   }
 
-  .contenido-principal .container,
-  .contenido-proyecto .container {
-    margin-top: 1rem;
-  }
-
-  .fullscreen-image,
-  .text-overlay {
-    padding: 1.5rem;
-  }
-
-  .contenido-entrada {
+  .contenido-principal div,
+  .contenido-proyecto div {
+    max-width: 100%;
     padding: 0.5rem;
+    margin: 0 auto;
   }
 
-  .contenido-entrada h1 {
+  .contenido-principal h1,
+  .contenido-proyecto h1 {
     font-size: 1.5rem;
   }
 
-  .contenido-entrada h3 {
+  .contenido-principal h2,
+  .contenido-proyecto h2 {
     font-size: 1.2rem;
   }
 
-  .contenido-entrada p {
-    font-size: 0.95rem;
+  .contenido-font {
+    font-size: 0.9rem;
   }
 
-  .modal-dialog {
-    max-width: 95%;
-    max-height: 95%;
+  img[data-hide="mobile"] {
+    display: none !important;
+  }
+
+  .fullscreen-image {
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+
+  #prevImage,
+  #nextImage {
+    width: 40px;
+    height: 40px;
+    top: 45%;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  #prevImage {
+    left: 5px;
+  }
+
+  #nextImage {
+    right: 5px;
   }
 
   .modal-body {
@@ -440,25 +530,16 @@ body {
   text-align: left;
 }
 
-/* En móviles, margen más pequeño y ancho 100% */
-@media (max-width: 767.98px) {
-  .hero-copy {
-    margin-left: 1.5rem;
-    margin-right: 1rem;
-  }
-
-  .hero-container {
-    justify-content: flex-start;
-  }
-
-  .fullscreen-image h1 {
-    font-size: 2.2rem;
+/* En desktop, sin padding izquierdo en el héroe */
+@media (min-width: 768px) {
+  .fullscreen-image {
+    padding-left: 0;
   }
 }
 
-/* Ajuste extra en mobile muy estrecho */
-@media (max-width: 575.98px) {
-  .hero-container {
+/* En móvil, mantenemos un pequeño respiro para que no choque con el borde */
+@media (max-width: 767.98px) {
+  .fullscreen-image {
     padding-left: 1rem;
     padding-right: 1rem;
   }
@@ -468,6 +549,89 @@ body {
     padding-left: .25rem;
   }
 }
+
+
+/* SECTION general */
+.expo-section {
+  width: 100%;
+  padding: 10px 0 15px;
+  height: auto;
+  background-color: #FF7B8E;
+}
+
+/* GRID principal: 3 columnas 45-25-30 */
+.expo-grid {
+  width: 1400px;
+  display: grid;
+  grid-template-columns: 45% 25% 30%;
+  height: 520px;
+  margin: 0 auto;
+}
+
+.expo-col {
+  height: 100%;
+  width: 100%;
+}
+
+/* ================= COLUMNA 1 ================= */
+
+.col-1 {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 100%;
+}
+
+.col1-block {
+  display: grid;
+  height: 100%;
+}
+
+.col1-block.block-1 {
+  grid-template-rows: 60% 40%;
+  /* ≈ 60 / 40 */
+}
+
+/* Bloque 2: 40% arriba, 60% abajo */
+.col1-block.block-2 {
+  grid-template-rows: 40% 60%;
+  /* ≈ 40 / 60 */
+}
+
+/* ================= COLUMNA 2 ================= */
+
+.col-2 {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  /* 50 / 50 */
+  height: 100%;
+}
+
+/* ================= COLUMNA 3 ================= */
+
+.col-3 {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  height: 100%;
+}
+
+/* Cada fila horizontal de la columna 3 es un grid de 2 columnas */
+
+.col3-row {
+  display: grid;
+}
+
+/* Fila 1: 70% + 30% */
+.row-1 {
+  grid-template-columns: 70% 30%;
+  /* 70 / 30 */
+}
+
+/* Fila 2: 30% + 70% */
+.row-2 {
+  grid-template-columns: 30% 70%;
+  /* 30 / 70 */
+}
+
 
 /* ===== Bufeo – Mobile overflow + hero margin FIX v3 (añadido por ChatGPT) ===== */
 
@@ -491,63 +655,37 @@ body {
   justify-content: flex-start;
 }
 
-/* El bloque hero-copy se mantiene, pero afinamos márgenes */
 .hero-copy {
+  text-align: left;
   margin-left: 3rem;
-  margin-right: 1.5rem;
   max-width: 900px;
 }
 
-/* 4) Ajuste de márgenes y alturas por breakpoint */
-
-/* Móviles */
-@media (max-width: 575.98px) {
-
-  .fullscreen-image,
-  .text-overlay {
-    padding: 1.5rem 1rem 2.5rem;
-    min-height: 75vh;
-  }
-
-  .hero-container {
-    justify-content: flex-start;
-  }
-
+@media (max-width: 992px) {
   .hero-copy {
-    margin-left: 1.25rem;
-    margin-right: 1rem;
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-copy {
+    margin-left: 1rem;
     max-width: 100%;
   }
 }
 
-/* Tablets y pantallas medianas */
-@media (min-width: 576px) and (max-width: 991.98px) {
-
-  .fullscreen-image,
-  .text-overlay {
-    padding: 2rem 2.5rem;
-    min-height: 80vh;
-  }
-
-  .hero-copy {
-    margin-left: 2.5rem;
-    margin-right: 2rem;
+/* 4) Padding del héroe: aire en móvil; limpio en desktop */
+@media (min-width: 768px) {
+  .fullscreen-image {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
-/* Desktop grande */
-@media (min-width: 992px) {
-
-  .fullscreen-image,
-  .text-overlay {
-    padding: 2.5rem 3.5rem;
-    min-height: 90vh;
-  }
-
-  .hero-copy {
-    margin-left: 4rem;
-    margin-right: 3rem;
-    max-width: 1100px;
+@media (max-width: 767.98px) {
+  .fullscreen-image {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
@@ -580,13 +718,68 @@ body {
   word-break: break-word;
 }
 
-/* 7) Asegurar que imágenes, videos y canvas no provoquen scroll horizontal */
+/* 7) Menú overlay: evitar que sus títulos gigantes creen scroll horizontal */
+.menu-overlay {
+  overflow-x: hidden;
+}
+
+.menu-overlay a {
+  font-size: clamp(24px, 10vw, 56px);
+  margin: .5rem 1rem;
+  max-width: 92vw;
+}
 img,
 video,
 canvas {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* ===== Bufeo – Altura extendida de secciones principales ===== */
+
+/* Altura mínima grande pero flexible */
+.fullscreen-image,
+.text-overlay {
+  min-height: calc(100vh - var(--nav-h));
+  height: auto !important;
+  /* permite crecer si el contenido es mayor */
+}
+
+/* Soporte moderno: usa 100svh (evita saltos en móvil) */
+@supports (height: 1svh) {
+
+  .fullscreen-image,
+  .text-overlay {
+    min-height: calc(100svh - var(--nav-h));
+  }
+}
+
+/* Desktop: casi pantalla completa */
+@media (min-width: 992px) {
+
+  .fullscreen-image,
+  .text-overlay {
+    min-height: calc(95svh - var(--nav-h));
+  }
+}
+
+/* Tablet: un poco más compacto */
+@media (min-width: 576px) and (max-width: 991.98px) {
+
+  .fullscreen-image,
+  .text-overlay {
+    min-height: calc(85svh - var(--nav-h));
+  }
+}
+
+/* Móvil: buena proporción sin forzar */
+@media (max-width: 575.98px) {
+
+  .fullscreen-image,
+  .text-overlay {
+    min-height: calc(80svh - var(--nav-h));
+  }
 }
 
 /* === Igualar tamaño entre contenido-grilla y contenido-principal === */
@@ -606,30 +799,64 @@ canvas {
 }
 
 .contenido-principal {
-  min-height: 60vh;
+  min-height: 100vh;
+  background-color: #ff7ba7;
 }
 
-/* Ajustes responsivos opcionales */
-@media (min-width: 768px) {
-  .contenido-grilla {
+/* Asegurar coherencia interna */
+.contenido-grilla .container,
+.contenido-principal>div {
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Para pantallas grandes */
+@media (min-width: 992px) {
+
+  .contenido-grilla,
+  .contenido-principal {
+    min-height: 95vh;
+  }
+}
+
+/* Para pantallas medianas */
+@media (min-width: 576px) and (max-width: 991.98px) {
+
+  .contenido-grilla,
+  .contenido-principal {
     min-height: 85vh;
   }
+}
 
+/* Para móviles */
+@media (max-width: 575.98px) {
+
+  .contenido-grilla,
   .contenido-principal {
-    min-height: 80vh;
+    min-height: auto;
   }
 }
 
-/* === FIN FIX === */
-
-/* 8. Estilos específicos del footer */
-footer h5 {
-  font-size: 1rem;
-  margin-bottom: .5rem;
+/* === Footer consistente en todas las páginas === */
+footer {
+  background-color: #F8F9FA;
+  color: #000;
+  font-family: 'Futura Light BT V1', sans-serif;
+  padding: 2rem 0;
 }
 
-footer {
+footer h5 {
+  font-family: 'Futura Md BT', sans-serif;
+  font-size: 1rem;
+  margin-bottom: .5rem;
+  text-transform: uppercase;
+}
+
+footer p,
+footer a {
   font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0;
 }
 
 footer ul {
@@ -645,82 +872,188 @@ footer .fab {
   font-size: 1.4rem;
 }
 
-/* Forzar el tamaño del logo en el footer si lo deseas */
-footer .logo-footer img {
-  max-height: 50px;
-  width: auto;
-}
-
-/* ====== TIMELINE NUEVO – BUFEO ====== */
-
+/* ===== Timeline Bufeo (alineado al container) ===== */
 .timeline-bufeo {
-  background: #ff7ba7; /* Color de fondo rosado */
-  padding: 40px 0;
+  background: #ff7ba7;
   color: #fff;
   position: relative;
+  padding: 40px 0;
 }
 
-/* Por defecto queremos una sola línea blanca centrada de ancho limitado */
-.timeline-bufeo .timeline-inner::before {
-  content: "";
-  position: absolute;
-  top: 62px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  max-width: 880px;
-  height: 2px;
-  background: #ffffff;
-  opacity: 0.9;
-}
-
-/* Contenedor interno del timeline, se usa para posicionar la línea correctamente */
-.timeline-bufeo .timeline-inner {
+/* Línea blanca central alineada al container */
+.timeline-bufeo .container {
   position: relative;
 }
 
-/* TITULOS y TEXTOS dentro del timeline */
-.t-item h3 {
-  font-weight: 700;
-}
-
-/* Texto secundario */
-.t-item p {
-  font-family: 'Futura Light BT V1', sans-serif;
-  margin-bottom: 0.3rem;
-}
-
-/* En pantallas grandes */
-/* .timeline-inner {
-  width: 960px;
-}
-*/
-
-.timeline-inner {
+.timeline-bufeo .timeline-inner {
+  position: relative;
   width: 100%;
-  max-width: 960px;
+  max-width: none;
   margin: 0 auto;
 }
 
-/* ==== Responsivo general de la sección timeline ==== */
+/* Línea blanca anclada a la parte inferior de la fila superior */
+.timeline-row--top {
+  position: relative;
+  padding-bottom: 32px;
+  /* ya lo tienes; deja un pequeño aire sobre la línea */
+}
 
-/* Para pantallas medianas hacia abajo, quitamos la línea blanca principal
-   (porque el layout se vuelve de una sola columna y ya no calza bien)
-*/
+.timeline-row--top::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  /* justo bajo la fila superior */
+  height: 2px;
+  background: #fff;
+  opacity: .9;
+}
+
+/* Configuración general */
+.timeline-inner {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+}
+
+.timeline-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.timeline-row--top {
+  padding-bottom: 32px;
+}
+
+.timeline-row--bottom {
+  padding-top: 32px;
+}
+
+/* Items */
+.t-item h3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.t-item p {
+  font-family: 'Futura Light BT V1', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.t-item em {
+  font-style: italic;
+}
+
+/* Responsivo */
 @media (max-width: 992px) {
-  .timeline-bufeo .timeline-inner::before {
+  .timeline-row {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .timeline-row--top::after {
     display: none;
   }
 }
 
-/* ====== 11. Visiones Sonoras – Bufeo y Proyectos Fortalecidos ====== */
-/* Sección completa */
+/* entradas apiladas dentro de un mismo item (como los dos 2012) */
+.t-item .t-entry+.t-entry {
+  margin-top: 1rem;
+}
+
+
+/* === FIX DEFINITIVO (append-only): NAV IGUAL EN TODAS LAS PÁGINAS === */
+/* Mantengo todo tu CSS original arriba. Estos estilos sólo sobrescriben lo necesario. */
+:root {
+  --nav-h: 86px;
+}
+
+/* altura final deseada (igual en index y poderverde) */
+
+body {
+  padding-top: var(--nav-h) !important;
+}
+
+.navbar {
+  height: var(--nav-h) !important;
+  padding: 0 !important;
+  --bs-navbar-padding-y: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.navbar .container {
+  height: var(--nav-h) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+/* El logo queda fijo en 46px para que nunca estire la barra */
+.navbar-brand {
+  height: var(--nav-h) !important;
+  display: flex !important;
+  align-items: center !important;
+  line-height: 1 !important;
+}
+
+.navbar-brand img {
+  height: 76px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* Botones con altura consistente para no alterar el alto del nav */
+.hamburger-button {
+  height: 76px !important;
+  width: auto;
+  border: none;
+  background: transparent;
+  line-height: 1 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Opcional: en móviles baja apenas el nav para que se vea más compacto */
+@media (max-width: 768px) {
+  .navbar {
+    height: 60px !important;
+  }
+
+  .navbar .container {
+    height: 60px !important;
+  }
+
+  .navbar-brand {
+    height: 60px !important;
+  }
+
+  .navbar-brand img {
+    height: 42px !important;
+  }
+}
+
+/* === FIN FIX === */
+
+/* ===== Visiones Sonoras – sección de proyectos (videos) ===== */
+
 .visiones-proyectos {
   background-color: #ffffff;
   padding: 3rem 0;
 }
 
-/* Títulos de bloque */
 .titulo-proyectos {
   font-family: 'Futura Md BT', sans-serif;
   color: #FF7B8E;
@@ -729,273 +1062,19 @@ footer .logo-footer img {
   margin-bottom: 2rem;
 }
 
-/* Contenedor de cada tarjeta de proyecto (video + texto) */
-.proyecto-card {
-  margin-bottom: 2rem;
-}
-
-/* Wrapper de la imagen-miniatura o video */
 .video-thumb {
-  position: relative;
+  display: inline-block;
+  border-radius: 4px;
   overflow: hidden;
-  border-radius: 0.5rem;
-  cursor: pointer;
-}
-
-/* Imagen miniatura */
-.video-thumb img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Icono de "play" superpuesto (simple) */
-.video-thumb::after {
-  content: "▶";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2.5rem;
-  color: #ffffff;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-}
-
-/* hover suave sobre el thumbnail */
-.video-thumb:hover {
-  filter: brightness(1.05);
-}
-
-/* Texto descriptivo debajo de cada proyecto */
-.video-caption {
-  font-family: 'Futura Light BT V1', sans-serif;
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: .5rem;
-}
-
-/* ========== Sección rosada final de “Visiones Bufeo” ========== */
-
-.visiones-rosa {
-  background-color: #ff7ba7;
-  padding: 4rem 0;
-}
-
-/* Texto principal de la sección rosada */
-.visiones-rosa-text {
-  font-family: 'Futura Md BT', sans-serif;
-  font-size: 2rem;
-  color: #ffffff;
-  margin: 0;
-}
-
-/* Ajuste para el texto pequeño en la sección rosada,
-   aquí asumimos que los párrafos usan .video-caption (puedes cambiarlo si fuera otra clase) */
-.visiones-rosa .video-caption {
-  color: #ffffff;
-}
-
-/* Responsivo */
-@media (max-width: 767.98px) {
-  .visiones-rosa-text {
-    font-size: 1.6rem;
-    text-align: center;
-  }
-
-  .visiones-rosa .video-caption {
-    text-align: center;
-  }
-}
-
-/* ===== Bufeo – estructura general de secciones ===== */
-
-/* Aseguramos mínimo de altura para las secciones principales,
-   para que se parezcan visualmente */
-.contenido-principal,
-.contenido-proyecto,
-.contenido-grilla {
-  min-height: 60vh;
-}
-
-/* En pantallas más grandes, aumentamos un poco la altura mínima */
-@media (min-width: 992px) {
-
-  .contenido-principal,
-  .contenido-proyecto,
-  .contenido-grilla {
-    min-height: 80vh;
-  }
-}
-
-/* ===== Bufeo – Refuerzo del ancho y centrado interno ===== */
-
-/* Centramos el contenido del contenedor interno para que no quede “suelto” a la izquierda */
-.contenido-principal .container,
-.contenido-proyecto .container,
-.contenido-grilla .container {
-  max-width: 1140px;
-  margin: 0 auto;
-}
-
-/* ===== Bufeo – Ajuste extra para la sección rosa y proyectos ===== */
-
-.visiones-proyectos .container,
-.visiones-rosa .container {
-  max-width: 1140px;
-}
-
-/* ===== Bufeo – Ajustes para el timeline (estructura responsiva completa) ===== */
-
-/* Bloques de fecha y texto apilados en filas */
-.timeline-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-/* Cada columna del timeline */
-.timeline-col {
-  flex: 1 1 260px;
-}
-
-/* Título de año */
-.t-year {
-  font-family: 'Futura Md BT', sans-serif;
-  font-size: 1.3rem;
-  margin-bottom: 0.4rem;
-}
-
-/* Texto interior (descripción) */
-.t-desc {
-  font-family: 'Futura Light BT V1', sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-/* ====== TIMELINE NUEVO – BUFEO (ESTRUCTURA GRID) ====== */
-
-/* Contenedor principal del timeline */
-.timeline-inner {
-  width: 100%;
-  max-width: 980px;
-  margin: 0 auto;
-}
-
-/* Contenedor de cada fila (parte superior e inferior del timeline) */
-.timeline-row--top,
-.timeline-row--bottom {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.25rem;
-}
-
-/* Aseguramos centrado vertical y separación */
-.timeline-row--top {
-  margin-bottom: 2rem;
-}
-
-/* En pantallas medianas, pasamos a 2 columnas */
-@media (max-width: 992px) {
-
-  .timeline-row--top,
-  .timeline-row--bottom {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* En pantallas pequeñas, 1 columna */
-@media (max-width: 576px) {
-
-  .timeline-row--top,
-  .timeline-row--bottom {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Estilo de cada “item” del timeline */
-.t-item {
-  position: relative;
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
-  background: rgba(255, 255, 255, 0.09);
-}
-
-/* Título principal del ítem (por ej. año) */
-.t-item h3 {
-  font-family: 'Futura Md BT', sans-serif;
-  font-size: 1.4rem;
-  margin-bottom: 0.35rem;
-}
-
-/* Texto */
-.t-item p {
-  font-family: 'Futura Light BT V1', sans-serif;
-  font-size: 0.95rem;
-  margin: 0;
-}
-
-/* Destacados (cursivas) */
-.t-item em {
-  font-style: italic;
-}
-
-/* ===== Línea blanca principal (ajustada al “top row”) ===== */
-
-/* Contenedor de la fila superior: lo usamos como referencia para la línea */
-.timeline-row--top {
-  position: relative;
-}
-
-/* La línea blanca ahora se dibuja ANCLADA a la fila superior, no al total */
-.timeline-row--top::after {
-  content: "";
-  position: absolute;
-  left: 1rem;
-  right: 1rem;
-  bottom: -8px;
-  height: 2px;
-  background: #ffffff;
-  opacity: 0.9;
-}
-
-/* En pantallas más pequeñas la ocultamos para no romper el layout */
-@media (max-width: 992px) {
-  .timeline-row--top::after {
-    display: none;
-  }
-}
-
-/* ===== Bufeo – proyecto: hover y realce de tarjetas de video ===== */
-
-/* Caja de proyecto (miniatura de video) */
-.proyecto-card {
-  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Elevación y sombra en hover */
-.proyecto-card:hover {
+.video-thumb:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
 
-/* Ajuste de la miniatura */
-.video-thumb {
-  border-radius: 0.75rem;
-  overflow: hidden;
-}
-
-/* Opcional: animación ligera en la imagen */
-.video-thumb img {
-  transition: transform 0.25s ease, filter 0.25s ease;
-}
-
-.proyecto-card:hover .video-thumb img {
-  transform: scale(1.02);
-  filter: brightness(1.08);
-}
-
-/* Pie de foto (caption) debajo del proyecto */
 .video-caption {
   font-family: 'Futura Light BT V1', sans-serif;
   font-size: 0.9rem;
@@ -1003,14 +1082,13 @@ footer .logo-footer img {
   margin-top: .5rem;
 }
 
-/* ===== Ajuste de la sección "Visiones Bufeo" (rosa) ===== */
+/* ===== Sección rosada final ===== */
 
 .visiones-rosa {
-  background-color: #ff7ba7;
+  background-color: #FF7B8E;
   padding: 4rem 0;
 }
 
-/* Título grande */
 .visiones-rosa-text {
   font-family: 'Futura Md BT', sans-serif;
   font-size: 2rem;
@@ -1018,78 +1096,37 @@ footer .logo-footer img {
   margin: 0;
 }
 
-/* Subtexto / descripción */
 .visiones-rosa .video-caption {
   color: #ffffff;
 }
 
-/* Responsivo */
+/* Responsive */
 @media (max-width: 767.98px) {
   .visiones-rosa-text {
-    font-size: 1.6rem;
     text-align: center;
-  }
-
-  .visiones-rosa .video-caption {
-    text-align: center;
+    margin-top: 1.5rem;
   }
 }
 
-/* ===== Sección de proyectos con fondo blanco ===== */
-
-.visiones-proyectos {
-  background-color: #ffffff;
-  padding: 3rem 0;
-}
-
-.titulo-proyectos {
-  font-family: 'Futura Md BT', sans-serif;
-  font-size: 2rem;
-  text-align: center;
-  color: #000;
-  margin-bottom: 2rem;
-}
-
-/* ===== Bufeo – VIDEO POPUP (YouTube) ===== */
-
-/* Contenedor responsivo 16:9 para el embed */
+/* Responsive YouTube embed */
 .video-embed {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 56.25%;
+  /* relación 16:9 */
   height: 0;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .video-embed iframe {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-/* Modal de video */
-#videoModal .modal-dialog {
-  max-width: 900px;
-  margin: 1.75rem auto;
-}
-
-#videoModal .modal-content {
-  background-color: #000;
-  border: none;
-}
-
-#videoModal .modal-body {
-  padding: 0;
-}
-
-/* El iframe dentro del modal ocupa todo el contenedor */
-#videoModalIframe {
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
 }
-
-/* ===== Override específico para el modal de video con .ratio ===== */
 
 /* Fix: iframes dentro de .ratio (modales de video) deben ocupar todo */
 .ratio iframe,
@@ -1108,13 +1145,18 @@ footer .logo-footer img {
 }
 
 #videoModal .modal-content {
-  background-color: #000;
+  background-color: #000 !important;
+  border-radius: 0.5rem;
   border: none;
+  padding: 0;
+  display: block;
+  /* quitar el flex global */
 }
 
 #videoModal .modal-body {
   padding: 0;
-  display: block;           /* quitar el flex global */
+  display: block;
+  /* quitar el flex global */
 }
 
 #videoModal .ratio {
@@ -1125,4 +1167,223 @@ footer .logo-footer img {
   width: 100% !important;
   height: 100% !important;
   display: block;
+}
+
+/* ===== Bloque editorial Bufeo ===== */
+
+.bufeo-editorial {
+  max-width: 960px;
+  margin: 4rem auto 0;
+  padding-left: 0;
+  margin-left: 0;
+  border-left: none;
+  position: relative;
+  font-family: 'Futura Md BT', sans-serif;
+  line-height: 1.7;
+}
+
+
+.bufeo-editorial::before {
+  position: absolute;
+  left: -6px;
+  top: 0.4rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #FF7B8E;
+  /* acento Bufeo */
+}
+
+.bufeo-editorial__header {
+  margin-bottom: 2.5rem;
+}
+
+.bufeo-editorial__title {
+  font-size: 2.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+}
+
+.bufeo-editorial__subtitle {
+  max-width: 640px;
+  font-size: 0.95rem;
+  text-transform: none;
+  opacity: 0.85;
+}
+
+/* grupos (categoría + lista) en dos columnas flexibles */
+
+.bufeo-editorial__group {
+  display: grid;
+  grid-template-columns: minmax(140px, 190px) minmax(0, 1fr);
+  column-gap: 2rem;
+  row-gap: 0.75rem;
+  /* ✅ separa perfectamente label + lista */
+  padding: 1.2rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+
+.bufeo-editorial__group:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.bufeo-editorial__label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #FF7B8E;
+  white-space: nowrap;
+}
+
+.bufeo-editorial__list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.bufeo-editorial__list li {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.98rem;
+  margin-bottom: 0.25rem;
+}
+
+.bufeo-editorial__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65rem;
+  width: 6px;
+  height: 1.5px;
+  background: #FF7B8E;
+  border-radius: 1px;
+}
+
+/* Color rosado para el título "Proyectos" */
+.bufeo-editorial__header h2 {
+  color: #FF7B8E;
+}
+
+
+/* Ajustes responsive */
+
+@media (max-width: 768px) {
+  .bufeo-editorial {
+    padding-left: 1.6rem;
+    border-left-width: 1px;
+    margin-top: 2.5rem;
+  }
+
+  .bufeo-editorial__title {
+    font-size: 1.6rem;
+  }
+
+  .bufeo-editorial__group {
+    grid-template-columns: 1fr;
+    row-gap: 0.6rem;
+  }
+
+  .bufeo-editorial__label {
+    font-size: 0.8rem;
+  }
+}
+
+/*=== Fix específico para impedir que otras reglas borren el contenido ===*/
+.bufeo-editorial__list li {
+  display: block !important;
+  color: #FF7B8E !important;
+  opacity: 1 !important;
+}
+
+/* Ajuste del texto del subtítulo */
+.bufeo-editorial__subtitle {
+  color: inherit;
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+  display: block;
+}
+
+/* === Animación editorial al hacer scroll === */
+
+.bufeo-editorial__group {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+/* Cuando entra en pantalla */
+.bufeo-editorial__group.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Pequeño stagger (retardo) para cada grupo */
+.bufeo-editorial__group:nth-of-type(1) {
+  transition-delay: 0.05s;
+}
+
+.bufeo-editorial__group:nth-of-type(2) {
+  transition-delay: 0.12s;
+}
+
+.bufeo-editorial__group:nth-of-type(3) {
+  transition-delay: 0.19s;
+}
+
+.bufeo-editorial__group:nth-of-type(4) {
+  transition-delay: 0.26s;
+}
+
+.bufeo-editorial__group:nth-of-type(5) {
+  transition-delay: 0.33s;
+}
+
+.bufeo-editorial__group:nth-of-type(6) {
+  transition-delay: 0.40s;
+}
+
+@media (max-width: 768px) {
+  .bufeo-editorial__group {
+    row-gap: 0.35rem;
+    /* más compactado para móvil */
+    padding: 0.8rem 0;
+    /* reduce aire vertical */
+  }
+
+  .bufeo-editorial__list li {
+    margin-bottom: 0.15rem;
+    /* compacta aún más los ítems */
+  }
+
+  .bufeo-editorial__list {
+    margin: 0.4rem 0 0 !important;
+  }
+
+}
+
+.texto_proyectos {
+  margin-top: 2.5rem;
+}
+
+/* Todas las imágenes rellenan su bloque */
+.expo-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  padding: 15px;
+}
+
+/* FORZAR ALTURA REAL EN TODAS LAS SUBDIVISIONES DEL GRID */
+.expo-grid,
+.col-1,
+.col1-block,
+.col-2,
+.col-3,
+.col3-row {
+    height: 100%;
 }
