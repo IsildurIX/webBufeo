@@ -724,6 +724,7 @@ body {
   margin: .5rem 1rem;
   max-width: 92vw;
 }
+
 img,
 video,
 canvas {
@@ -867,105 +868,6 @@ footer li {
 footer .fab {
   font-size: 1.4rem;
 }
-
-/* ===== Timeline Bufeo (alineado al container) ===== */
-.timeline-bufeo {
-  background: #ff7ba7;
-  color: #fff;
-  position: relative;
-  padding: 40px 0;
-}
-
-/* Línea blanca central alineada al container */
-.timeline-bufeo .container {
-  position: relative;
-}
-
-.timeline-bufeo .timeline-inner {
-  position: relative;
-  width: 100%;
-  max-width: none;
-  margin: 0 auto;
-}
-
-/* Línea blanca anclada a la parte inferior de la fila superior */
-.timeline-row--top {
-  position: relative;
-  padding-bottom: 32px;
-  /* ya lo tienes; deja un pequeño aire sobre la línea */
-}
-
-.timeline-row--top::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -2px;
-  /* justo bajo la fila superior */
-  height: 2px;
-  background: #fff;
-  opacity: .9;
-}
-
-/* Configuración general */
-.timeline-inner {
-  width: 100%;
-  max-width: none;
-  margin: 0 auto;
-}
-
-.timeline-row {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 1fr;
-  gap: 48px;
-  align-items: start;
-}
-
-.timeline-row--top {
-  padding-bottom: 32px;
-}
-
-.timeline-row--bottom {
-  padding-top: 32px;
-}
-
-/* Items */
-.t-item h3 {
-  font-weight: 700;
-  font-size: 1.5rem;
-  margin-bottom: 0.3rem;
-}
-
-.t-item p {
-  font-family: 'Futura Light BT V1', sans-serif;
-  font-size: 0.9rem;
-  line-height: 1.3;
-  margin: 0;
-}
-
-.t-item em {
-  font-style: italic;
-}
-
-/* Responsivo */
-@media (max-width: 992px) {
-  .timeline-row {
-    grid-auto-flow: row;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .timeline-row--top::after {
-    display: none;
-  }
-}
-
-/* entradas apiladas dentro de un mismo item (como los dos 2012) */
-.t-item .t-entry+.t-entry {
-  margin-top: 1rem;
-}
-
 
 /* === FIX DEFINITIVO (append-only): NAV IGUAL EN TODAS LAS PÁGINAS === */
 /* Mantengo todo tu CSS original arriba. Estos estilos sólo sobrescriben lo necesario. */
@@ -1381,5 +1283,102 @@ body {
 .col-2,
 .col-3,
 .col3-row {
-    height: 100%;
+  height: 100%;
+}
+
+/* === TIMELINE BUFEO – 3 FILAS, 8 COLUMNAS === */
+
+.timeline-bufeo {
+  background-color: #FF7B8E;
+  color: #fff;
+  padding: 60px 10px;
+}
+
+/* contenedor general del grid */
+.timeline-grid-8 {
+  max-width: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  /* espacio entre filas */
+}
+
+/* cada fila es un grid de 8 columnas */
+.timeline-row {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+/* fila superior e inferior (contenido) */
+.timeline-row-top .timeline-cell,
+.timeline-row-bottom .timeline-cell {
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* celdas vacías: ocupan espacio pero no muestran nada */
+.timeline-cell-empty {
+  min-height: 1px;
+}
+
+/* FILA 2: la línea blanca centrada */
+.timeline-row-line {
+  align-items: center;
+}
+
+.timeline-row-line .timeline-line {
+  grid-column: 1 / -1;
+  /* ocupa las 8 columnas */
+  height: 2px;
+  background-color: #fff;
+}
+
+/* tipografía del timeline */
+.timeline-cell h3 {
+  font-family: 'Futura Md BT', sans-serif;
+  font-size: 1.4rem;
+  margin: 0 0 0.3rem;
+}
+
+.timeline-cell p {
+  font-family: 'Futura Light BT V1', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  margin: 0 0 0.5rem;
+}
+
+/* último párrafo sin margen inferior extra */
+.timeline-cell p:last-child {
+  margin-bottom: 0;
+}
+
+/* responsive: en móvil, todo en una columna */
+@media (max-width: 768px) {
+
+  .timeline-grid-8 {
+    gap: 24px;
+  }
+
+  .timeline-row {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-row-line .timeline-line {
+    grid-column: 1;
+  }
+
+  .timeline-row-top .timeline-cell,
+  .timeline-row-bottom .timeline-cell {
+    padding: 0 0 16px;
+  }
+}
+
+/* Navbar con respiro lateral */
+.navbar .container-fluid {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
 }
