@@ -97,29 +97,29 @@
             <div class="expo-col col-1">
                 <div class="col1-block block-1">
                     <img src="../../assets/img/imgExpo/01/IMG_8947.JPG" alt="">
-                    <img src="../../assets/img/fondoblanco.png" alt="">
+                    <img class="no-zoom" data-hide="mobile" src="../../assets/img/fondoblanco.png" alt="">
                 </div>
 
                 <div class="col1-block block-2">
-                    <img src="../../assets/img/fondoblanco.png" alt="">
+                    <img class="no-zoom" data-hide="mobile" src="../../assets/img/fondoblanco.png" alt="">
                     <img src="../../assets/img/imgExpo/01/IMG_8951.JPG" alt="">
                 </div>
             </div>
 
             <div class="expo-col col-2">
                 <img src="../../assets/img/imgExpo/01/IMG_8963.JPG" alt="">
-                <img src="../../assets/img/fondoblanco.png" alt="">
+                <img class="no-zoom" data-hide="mobile" src="../../assets/img/fondoblanco.png" alt="">
             </div>
 
             <div class="expo-col col-3">
                 <div class="col3-row row-1">
-                    <img src="../../assets/img/fondoblanco.png" alt="">
+                    <img class="no-zoom" data-hide="mobile" src="../../assets/img/fondoblanco.png" alt="">
                     <img src="../../assets/img/imgExpo/01/IMG_8968.JPG" alt="">
                 </div>
 
                 <div class="col3-row row-2">
                     <img src="../../assets/img/imgExpo/01/IMG_8984.JPG" alt="">
-                    <img src="../../assets/img/fondoblanco.png" alt="">
+                    <img class="no-zoom" data-hide="mobile" src="../../assets/img/fondoblanco.png" alt="">
                 </div>
             </div>
 
@@ -150,9 +150,8 @@
                         Alfredo Villar
                     </p>
                     <p>
-                    <h3>2012</h3>
-                    <em>Recuerdo de Iquitos</em><br>
-                    Christian Bendayán
+                        <em>Recuerdo de Iquitos</em><br>
+                        Christian Bendayán
                     </p>
                 </div>
 
@@ -461,135 +460,175 @@
         openHamburgerMenu.addEventListener('click', () => {
             menuOverlay.classList.add('show');
         });
-
-        // Objeto con el contenido de cada año – usando el MISMO formato que expo-grid
-        const grillaPorAnio = {
-            "2006": `
-    <div class="expo-grid">
-
-        <div class="expo-col col-1">
-            <div class="col1-block block-1">
-                <!-- Imagen real + relleno -->
-                <img src="../../assets/img/imgExpo/06/REM 2.jpg" alt="REM 2">
-                <img class="no-zoom" src="../../assets/img/fondoblanco.png" alt="">
-            </div>
-
-            <div class="col1-block block-2">
-                <img class="no-zoom" src="../../assets/img/fondoblanco.png" alt="">
-                <img src="../../assets/img/imgExpo/06/REM 4.jpg" alt="REM 4">
-            </div>
+        // Objeto con el contenido de cada artículo de la línea de tiempo
+        // La CLAVE es "AÑO - TÍTULO" exactamente como aparece en el <em> del timeline
+        const grillaPorEntrada = {
+            "2006 - La Saga de los maestros": `
+<div class="expo-grid">
+    <div class="expo-col col-1">
+        <div class="col1-block block-1">
+            <img src="../../assets/img/imgExpo/06/REM1.jpg" alt="">
+            <img class="no-zoom" data-hide="mobile" src="../../assets/img/fondoblanco.png" alt="">
         </div>
-
-        <div class="expo-col col-2">
-            <!-- Dos imágenes verticales -->
-            <img src="../../assets/img/imgExpo/06/REM1.jpg" alt="REM1">
-            <img src="../../assets/img/imgExpo/06/REM10.jpg" alt="REM10">
+        <div class="col1-block block-2">
+            <img class="no-zoom" data-hide="mobile" src="../../assets/img/fondoblanco.png" alt="">
+            <img src="../../assets/img/imgExpo/06/REM 2.jpg" alt="">
         </div>
-
-        <div class="expo-col col-3">
-            <div class="col3-row row-1">
-                <img class="no-zoom" src="../../assets/img/fondoblanco.png" alt="">
-                <img src="../../assets/img/imgExpo/06/z4.jpg" alt="z4">
-            </div>
-
-            <div class="col3-row row-2">
-                <img src="../../assets/img/imgExpo/06/rembersala.jpg" alt="rembersala">
-                <img class="no-zoom" src="../../assets/img/fondoblanco.png" alt="">
-            </div>
-        </div>
-
     </div>
+
+    <div class="expo-col col-2">
+        <img src="../../assets/img/imgExpo/06/REM 4.jpg" alt="">
+        <img src="../../assets/img/imgExpo/06/REM 6.jpg" alt="">
+    </div>
+
+    <div class="expo-col col-3">
+        <div class="col3-row row-1">
+            <img class="no-zoom" data-hide="mobile" src="../../assets/img/fondoblanco.png" alt="">
+            <img src="../../assets/img/imgExpo/06/rembersala.jpg" alt="">
+        </div>
+        <div class="col3-row row-2">
+            <img src="../../assets/img/imgExpo/06/z4.jpg" alt="">
+            <img class="no-zoom" data-hide="mobile" src="../../assets/img/fondoblanco.png" alt="">
+        </div>
+    </div>
+</div>
     `,
 
-            "2012": `
-    <div class="expo-grid">
-
-        <div class="expo-col col-1">
-            <div class="col1-block block-1">
-                <img src="../../assets/img/imgExpo/10/64.jpg" alt="64">
-                <img class="no-zoom" src="../../assets/img/fondoblanco.png" alt="">
-            </div>
-
-            <div class="col1-block block-2">
-                <img class="no-zoom" src="../../assets/img/fondoblanco.png" alt="">
-                <img src="../../assets/img/imgExpo/10/65.jpg" alt="65">
-            </div>
+            "2012 - El Milagro Verde": `
+<div class="expo-grid">
+    <div class="expo-col col-1">
+        <div class="col1-block block-1">
+            <img src="../../assets/img/imgExpo/10/64.jpg" alt="">
+            <img class="no-zoom" data-hide="mobile" src="../../assets/img/fondoblanco.png" alt="">
         </div>
-
-        <div class="expo-col col-2">
-            <img src="../../assets/img/imgExpo/10/67.jpg" alt="67">
-            <img src="../../assets/img/imgExpo/10/68.jpg" alt="68">
+        <div class="col1-block block-2">
+            <img class="no-zoom" data-hide="mobile" src="../../assets/img/fondoblanco.png" alt="">
+            <img src="../../assets/img/imgExpo/10/65.jpg" alt="">
         </div>
-
-        <div class="expo-col col-3">
-            <div class="col3-row row-1">
-                <img class="no-zoom" src="../../assets/img/fondoblanco.png" alt="">
-                <img src="../../assets/img/imgExpo/10/69.jpg" alt="69">
-            </div>
-
-            <div class="col3-row row-2">
-                <img src="../../assets/img/imgExpo/10/70.jpg" alt="70">
-                <img class="no-zoom" src="../../assets/img/fondoblanco.png" alt="">
-            </div>
-        </div>
-
     </div>
+
+    <div class="expo-col col-2">
+        <img src="../../assets/img/imgExpo/10/66.jpg" alt="">
+        <img src="../../assets/img/imgExpo/10/67.jpg" alt="">
+    </div>
+
+    <div class="expo-col col-3">
+        <div class="col3-row row-1">
+            <img class="no-zoom" data-hide="mobile" src="../../assets/img/fondoblanco.png" alt="">
+            <img src="../../assets/img/imgExpo/10/68.jpg" alt="">
+        </div>
+        <div class="col3-row row-2">
+            <img src="../../assets/img/imgExpo/10/69.jpg" alt="">
+            <img class="no-zoom" data-hide="mobile" src="../../assets/img/fondoblanco.png" alt="">
+        </div>
+    </div>
+</div>
     `,
 
-            "2018": `
-    <div class="expo-grid">
+            "2012 - Recuerdo de Iquitos": `
+<div class="expo-grid">
+    <!-- aquí pones las imágenes reales de 2012 / Recuerdo de Iquitos -->
+</div>
+    `,
 
-        <div class="expo-col col-1">
-            <div class="col1-block block-1">
-                <img src="../../assets/img/imgExpo/09/57.jpg" alt="57">
-                <img class="no-zoom" src="../../assets/img/fondoblanco.png" alt="">
-            </div>
+            "2015 - Calvo de Araujo: la selva misma": `
+<div class="expo-grid">
+    <!-- grilla en formato expo-grid para este artículo -->
+</div>
+    `,
 
-            <div class="col1-block block-2">
-                <img class="no-zoom" src="../../assets/img/fondoblanco.png" alt="">
-                <img src="../../assets/img/imgExpo/09/58.jpg" alt="58">
-            </div>
+            "2017 - En el país de las Amazonas": `
+<div class="expo-grid">
+    <!-- grilla para este artículo -->
+</div>
+    `,
+
+            "2017 - Amazonistas": `
+<div class="expo-grid">
+    <!-- grilla para este artículo -->
+</div>
+    `,
+
+            "2017 - Usko Ayar": `
+<div class="expo-grid">
+    <!-- grilla para este artículo -->
+</div>
+    `,
+
+            "2018 - Augusto Falconi: Fotosociales, retrato de Iquitos": `
+<div class="expo-grid">
+    <div class="expo-col col-1">
+        <div class="col1-block block-1">
+            <img src="../../assets/img/imgExpo/09/57.jpg" alt="">
+            <img class="no-zoom" data-hide="mobile" src="../../assets/img/fondoblanco.png" alt="">
         </div>
-
-        <div class="expo-col col-2">
-            <img src="../../assets/img/imgExpo/09/60.jpg" alt="60">
-            <img src="../../assets/img/imgExpo/09/61.jpg" alt="61">
+        <div class="col1-block block-2">
+            <img class="no-zoom" data-hide="mobile" src="../../assets/img/fondoblanco.png" alt="">
+            <img src="../../assets/img/imgExpo/09/58.jpg" alt="">
         </div>
-
-        <div class="expo-col col-3">
-            <div class="col3-row row-1">
-                <img class="no-zoom" src="../../assets/img/fondoblanco.png" alt="">
-                <img src="../../assets/img/imgExpo/09/62.jpg" alt="62">
-            </div>
-
-            <div class="col3-row row-2">
-                <img src="../../assets/img/imgExpo/09/63.jpg" alt="63">
-                <img class="no-zoom" src="../../assets/img/fondoblanco.png" alt="">
-            </div>
-        </div>
-
     </div>
-    `
+
+    <div class="expo-col col-2">
+        <img src="../../assets/img/imgExpo/09/59.jpg" alt="">
+        <img src="../../assets/img/imgExpo/09/60.jpg" alt="">
+    </div>
+
+    <div class="expo-col col-3">
+        <div class="col3-row row-1">
+            <img class="no-zoom" data-hide="mobile" src="../../assets/img/fondoblanco.png" alt="">
+            <img src="../../assets/img/imgExpo/09/61.jpg" alt="">
+        </div>
+        <div class="col3-row row-2">
+            <img src="../../assets/img/imgExpo/09/62.jpg" alt="">
+            <img class="no-zoom" data-hide="mobile" src="../../assets/img/fondoblanco.png" alt="">
+        </div>
+    </div>
+</div>
+    `,
+
+            // Completa igual para 2021, 2023, 2025…
         };
 
 
-        // Escucha los clics en los años
-        // ----- TIMELINE: cambiar la grilla según el año -----
-        document.querySelectorAll('.timeline-bufeo h3').forEach(el => {
-            el.style.cursor = 'pointer';
+        // Escuchar los clics en cada párrafo de artículo dentro del timeline
+        document
+            .querySelectorAll('.timeline-bufeo .timeline-cell p')
+            .forEach(parrafo => {
+                const yearEl = parrafo.closest('.timeline-cell')?.querySelector('h3');
+                const titleEl = parrafo.querySelector('em');
 
-            el.addEventListener('click', e => {
-                const anio = e.target.textContent.trim();
-                const grilla = document.querySelector('.contenido-grilla');
+                if (!yearEl || !titleEl) return; // celda vacía o sin <em>
 
-                if (grillaPorAnio[anio]) {
-                    grilla.innerHTML = grillaPorAnio[anio];
-                    initGalleryListeners();   // <- volvemos a enganchar zoom en las nuevas imágenes
-                } else {
-                    grilla.innerHTML = `<p class="text-center text-white mt-3">No hay contenido disponible para ${anio}.</p>`;
-                }
+                const year = yearEl.textContent.trim();
+                const title = titleEl.textContent.trim();
+
+                // IMPORTANTE: la clave debe ser "AÑO - TÍTULO" con espacios
+                const key = `${year} - ${title}`;
+
+                parrafo.style.cursor = 'pointer';
+
+                parrafo.addEventListener('click', () => {
+                    const gridSection = document.querySelector('.contenido-grilla');
+                    if (!gridSection) return;
+
+                    if (grillaPorEntrada[key]) {
+                        // Reemplaza TODO el contenido de .contenido-grilla
+                        gridSection.innerHTML = grillaPorEntrada[key];
+                    } else {
+                        gridSection.innerHTML = `
+                    <div class="container">
+                        <p class="text-center text-white mt-3">
+                            No hay contenido disponible para <strong>${title}</strong> (${year}).
+                        </p>
+                    </div>`;
+                    }
+
+                    // Reenganchar el zoom en las nuevas imágenes (solo las que NO tienen .no-zoom)
+                    initGalleryListeners();
+                });
             });
-        });
+
+
 
     </script>
 

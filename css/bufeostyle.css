@@ -556,15 +556,18 @@ body {
   width: 100%;
   padding: 10px 0 15px;
   height: auto;
-  background-color: #FF7B8E;
+  background-color: #ffffff;
 }
 
 /* GRID principal: 3 columnas 45-25-30 */
 .expo-grid {
-  width: 1400px;
+  width: 100%;
+  max-width: 1400px;
+  /* mantiene tu diseño original en pantallas grandes */
   display: grid;
   grid-template-columns: 45% 25% 30%;
-  height: 520px;
+  height: auto;
+  /* deja que crezca según las imágenes */
   margin: 0 auto;
 }
 
@@ -1381,4 +1384,45 @@ body {
   align-items: center !important;
   padding-left: 20px !important;
   padding-right: 20px !important;
+}
+
+/* --- MODO MÓVIL: Eliminar imágenes en blanco y expandir las reales --- */
+@media (max-width: 768px) {
+
+  /* Ocultar cualquier placeholder */
+  img.no-zoom,
+  img[data-hide="mobile"],
+  img[src*="fondoblanco"],
+  img[src*="fondo-blanco"],
+  img[src*="fondo_blanco"],
+  img[src*="gris"] {
+    display: none !important;
+  }
+
+  /* La grilla se convierte en un flujo vertical */
+  .expo-grid {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  /* Cada columna ocupa ancho completo */
+  .expo-col {
+    width: 100% !important;
+    margin: 0 0 1.5rem 0 !important;
+  }
+
+  /* Las imágenes reales deben ocupar todo el ancho */
+  .expo-col img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+    padding: 5px;
+  }
+
+  /* Bloques internos también se expanden */
+  .col1-block,
+  .col3-row {
+    width: 100% !important;
+    display: block !important;
+  }
 }

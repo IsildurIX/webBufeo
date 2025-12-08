@@ -89,34 +89,34 @@
         </div>
     </section>
 
-    <section class="contenido-grilla">
+    <section class="expo-section">
         <div class="expo-grid">
             <div class="expo-col col-1">
                 <div class="col1-block block-1">
                     <img src="../../assets/img/imgExpo/01/IMG_8947.JPG" alt="">
-                    <img src="../../assets/img/fondoblanco.png" alt="">
+                    <img class="no-zoom" data-hide="mobile" src="../../assets/img/fondoblanco.png" alt="">
                 </div>
 
                 <div class="col1-block block-2">
-                    <img src="../../assets/img/fondoblanco.png" alt="">
+                    <img class="no-zoom" data-hide="mobile" src="../../assets/img/fondoblanco.png" alt="">
                     <img src="../../assets/img/imgExpo/01/IMG_8951.JPG" alt="">
                 </div>
             </div>
 
             <div class="expo-col col-2">
                 <img src="../../assets/img/imgExpo/01/IMG_8963.JPG" alt="">
-                <img src="../../assets/img/fondoblanco.png" alt="">
+                <img class="no-zoom" data-hide="mobile" src="../../assets/img/fondoblanco.png" alt="">
             </div>
 
             <div class="expo-col col-3">
                 <div class="col3-row row-1">
-                    <img src="../../assets/img/fondoblanco.png" alt="">
+                    <img class="no-zoom" data-hide="mobile" src="../../assets/img/fondoblanco.png" alt="">
                     <img src="../../assets/img/imgExpo/01/IMG_8968.JPG" alt="">
                 </div>
 
                 <div class="col3-row row-2">
                     <img src="../../assets/img/imgExpo/01/IMG_8984.JPG" alt="">
-                    <img src="../../assets/img/fondoblanco.png" alt="">
+                    <img class="no-zoom" data-hide="mobile" src="../../assets/img/fondoblanco.png" alt="">
                 </div>
 
 
@@ -275,7 +275,7 @@
         });
 
         // Selección de imágenes y elementos del modal
-        const images = document.querySelectorAll('.contenido-grilla img:not(.no-zoom)');
+        const images = document.querySelectorAll('.expo-grid img:not(.no-zoom)');
         const zoomedImage = document.getElementById('zoomedImage');
         const imageModal = document.getElementById('imageModal');
         const prevButton = document.getElementById('prevImage');
