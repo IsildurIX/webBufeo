@@ -15,9 +15,28 @@
 
 
 /* 2. Estilos globales */
+
+html,
+body {
+  height: 100%;
+}
+
 body {
   padding-top: var(--nav-h) !important;
-  /* antes: 70px fijos */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main.page-main {
+  flex: 1 0 auto;
+  /* empuja el footer hacia abajo */
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  flex-shrink: 0;
 }
 
 .bg-grishumo {
@@ -189,13 +208,17 @@ body {
 .contenido-principal,
 .contenido-proyecto {
   position: relative;
-  min-height: 100vh;
   display: flex;
+  height: auto;
+  min-height: var(--h-principal);
+  flex: 0 0 auto;
+  overflow: visible;
   justify-content: flex-start;
   align-items: center;
   color: white;
-  padding: 2rem;
+  padding: clamp(2rem, 6vh, 5rem) 2rem;
   font-family: 'Futura Md BT', sans-serif;
+  box-sizing: border-box;
 }
 
 .contenido-principal div,
@@ -206,13 +229,17 @@ body {
 }
 
 .contenido-entrada {
+  height: auto;
+  min-height: var(--h-entrada);
   position: relative;
   display: flex;
   justify-content: flex-start;
-  align-items: left;
+  align-items: flex-start;
   color: white;
   padding: 2rem 0;
   font-family: 'Futura Md BT', sans-serif;
+  flex: 0 0 auto;
+  overflow: visible;
 }
 
 .contenido-principal {
@@ -299,7 +326,7 @@ body {
 
 .text-overlay h5 {
   position: relative;
-  font-size: 1rem;
+  font-size: 2rem;
   font-family: 'Futura Md BT', sans-serif;
   color: #FF7B8E;
   z-index: 2;
@@ -349,21 +376,30 @@ body {
   filter: invert(1);
 }
 
-/* Ajusta la imagen */
+/* ===== Modal zoom: sin deformación ===== */
+
 .modal-content img:not(.btn-img) {
-  width: 100%;
-  height: 80vh;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 80vh;
+  /* o 85vh si quieres más grande */
+  object-fit: contain;
+  /* clave: respeta proporción */
   display: block;
   margin: auto;
 }
 
 #zoomedImage {
+  width: auto;
+  height: auto;
   max-width: 100%;
-  max-height: 60vh;
+  max-height: 80vh;
+  object-fit: contain;
   display: block;
   margin: auto;
-  z-index: 2;
 }
+
 
 .btn-secondary {
   background-color: rgba(255, 255, 255, 0.2);
@@ -452,13 +488,13 @@ body {
 
   .contenido-principal,
   .contenido-proyecto {
-    padding: 1rem;
-    min-height: auto;
+    min-height: 60svh;
+    /* o 60vh si prefieres */
+    padding: 2rem 1rem;
   }
 
   .contenido-principal div,
   .contenido-proyecto div {
-    max-width: 100%;
     padding: 0.5rem;
     margin: 0 auto;
   }
@@ -553,93 +589,102 @@ body {
 
 /* SECTION general */
 .expo-section {
+  height: var(--h-expo);
+  flex: 0 0 auto;
   width: 100%;
   padding: 10px 0 15px;
-  height: auto;
   background-color: #ffffff;
+  box-sizing: border-box;
 }
 
-/* GRID principal: 3 columnas 45-25-30 */
 .expo-grid {
   width: 100%;
   max-width: 1400px;
-  /* mantiene tu diseño original en pantallas grandes */
-  display: grid;
-  grid-template-columns: 45% 25% 30%;
-  height: auto;
-  /* deja que crezca según las imágenes */
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 9fr 11fr;
+  gap: 12px;
+  padding: 12px;
+  height: 100%;
+  box-sizing: border-box;
+  align-items: stretch;
 }
 
-.expo-col {
+.expo-grid,
+.col-1,
+.col-2 {
   height: 100%;
   width: 100%;
+}
+
+.expo-col,
+.col1-block,
+.col2-top,
+.col2-bottom {
+  min-height: 0;
+  overflow: hidden;
 }
 
 /* ================= COLUMNA 1 ================= */
 
 .col-1 {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 12px;
   height: 100%;
+  box-sizing: border-box;
 }
 
 .col1-block {
   display: grid;
+  gap: 12px;
   height: 100%;
 }
 
 .col1-block.block-1 {
-  grid-template-rows: 60% 40%;
-  /* ≈ 60 / 40 */
+  grid-template-rows: 3fr 2fr;
 }
 
-/* Bloque 2: 40% arriba, 60% abajo */
 .col1-block.block-2 {
-  grid-template-rows: 40% 60%;
-  /* ≈ 40 / 60 */
+  grid-template-rows: 2fr 3fr;
 }
 
 /* ================= COLUMNA 2 ================= */
 
 .col-2 {
   display: grid;
-  grid-template-rows: 50% 50%;
-  /* 50 / 50 */
+  grid-template-rows: 9fr 11fr;
+  gap: 12px;
+  padding: 12px;
   height: 100%;
+  box-sizing: border-box;
 }
 
-/* ================= COLUMNA 3 ================= */
-
-.col-3 {
+.col2-top {
   display: grid;
-  grid-template-rows: 50% 50%;
-  height: 100%;
+  grid-template-columns: 3fr 2fr;
+  gap: 12px;
+  min-height: 0;
 }
 
-/* Cada fila horizontal de la columna 3 es un grid de 2 columnas */
-
-.col3-row {
-  display: grid;
+.col2-bottom {
+  min-height: 0;
 }
-
-.row-1 {
-  grid-template-columns: 30% 70%;
-}
-
-.row-2 {
-  grid-template-columns: 70% 30%;
-}
-
 
 /* ===== Bufeo – Mobile overflow + hero margin FIX v3 (añadido por ChatGPT) ===== */
 
-/* 1) Evitar scroll horizontal global */
+/* 1) Evitar scroll horizontal global 
+
 html,
 body {
   width: 100%;
   overflow-x: hidden !important;
 }
+
+
+*/
+
 
 /* 2) Héroe y overlay: NO alturas fijas; dejan crecer al contenido */
 .fullscreen-image,
@@ -798,44 +843,23 @@ canvas {
   background-color: #fff;
 }
 
-.contenido-principal {
-  min-height: 100vh;
-  background-color: #ff7ba7;
-}
-
 /* Asegurar coherencia interna */
-.contenido-grilla .container,
 .contenido-principal>div {
-  max-width: 1200px;
-  width: 100%;
-}
-
-/* Para pantallas grandes */
-@media (min-width: 992px) {
-
-  .contenido-grilla,
-  .contenido-principal {
-    min-height: 95vh;
-  }
+  margin: 0 auto;
+  width: min(100%, 1000px);
+  padding: 0;
+  /* el aire ya lo da el section */
+  box-sizing: border-box;
 }
 
 /* Para pantallas medianas */
 @media (min-width: 576px) and (max-width: 991.98px) {
 
-  .contenido-grilla,
   .contenido-principal {
-    min-height: 85vh;
+    min-height: 95vh;
   }
 }
 
-/* Para móviles */
-@media (max-width: 575.98px) {
-
-  .contenido-grilla,
-  .contenido-principal {
-    min-height: auto;
-  }
-}
 
 /* === Footer consistente en todas las páginas === */
 footer {
@@ -876,12 +900,9 @@ footer .fab {
 /* Mantengo todo tu CSS original arriba. Estos estilos sólo sobrescriben lo necesario. */
 :root {
   --nav-h: 86px;
-}
-
-/* altura final deseada (igual en index y poderverde) */
-
-body {
-  padding-top: var(--nav-h) !important;
+  --h-entrada: 220px;
+  --h-expo: 100vh;
+  --h-principal: 75vh;
 }
 
 .navbar {
@@ -930,15 +951,15 @@ body {
 /* Opcional: en móviles baja apenas el nav para que se vea más compacto */
 @media (max-width: 768px) {
   .navbar {
-    height: 60px !important;
+    height: 86px !important;
   }
 
   .navbar .container {
-    height: 60px !important;
+    height: 86px !important;
   }
 
   .navbar-brand {
-    height: 60px !important;
+    height: 86px !important;
   }
 
   .navbar-brand img {
@@ -1276,17 +1297,7 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-  padding: 15px;
-}
-
-/* FORZAR ALTURA REAL EN TODAS LAS SUBDIVISIONES DEL GRID */
-.expo-grid,
-.col-1,
-.col1-block,
-.col-2,
-.col-3,
-.col3-row {
-  height: 100%;
+  padding: 0;
 }
 
 /* === TIMELINE BUFEO – 3 FILAS, 8 COLUMNAS === */
@@ -1399,30 +1410,90 @@ body {
     display: none !important;
   }
 
-  /* La grilla se convierte en un flujo vertical */
+  /* que la sección crezca según contenido (no 100vh fijo) */
+  .expo-section {
+    height: auto !important;
+    /* antes: height: var(--h-expo) */
+  }
+
+  /* grid principal: 1 columna */
   .expo-grid {
-    display: block !important;
-    width: 100% !important;
+    grid-template-columns: 1fr !important;
+    /* antes: 9fr 11fr */
+    height: auto !important;
+    align-items: start;
   }
 
-  /* Cada columna ocupa ancho completo */
-  .expo-col {
-    width: 100% !important;
-    margin: 0 0 1.5rem 0 !important;
+  /* desactivar grids internos y apilar */
+  .col-1,
+  .col-2,
+  .col1-block,
+  .col2-top {
+    display: flex !important;
+    /* antes: display:grid */
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 0 !important;
+    /* opcional: quita padding interno */
+    height: auto !important;
   }
 
-  /* Las imágenes reales deben ocupar todo el ancho */
-  .expo-col img {
+  .col2-bottom {
+    height: auto !important;
+  }
+
+  /* imágenes: una debajo de otra, mismo ancho */
+  .expo-grid img {
     width: 100% !important;
     height: auto !important;
-    object-fit: cover !important;
-    padding: 5px;
+    padding: 0 !important;
+    /* evita el “marco” de 5px */
+    display: block;
+    object-fit: cover;
   }
 
-  /* Bloques internos también se expanden */
-  .col1-block,
-  .col3-row {
-    width: 100% !important;
-    display: block !important;
+  /* si quieres aire extra entre bloques grandes */
+  .expo-col {
+    margin: 0 !important;
+    padding: 0 !important;
   }
+}
+
+/* 2 columnas (layout general) */
+.bufeo-editorial__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 3rem;
+  row-gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .bufeo-editorial__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Grupo: título arriba + texto debajo (sin estar al costado) */
+.bufeo-editorial__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Items: texto simple, sin sangría, sin bullets */
+.bufeo-editorial__items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+}
+
+.bufeo-editorial__item {
+  margin: 0;
+  padding: 0;
+  position: static;
+  color: #FF7B8E;
+  /* por si antes estaba relative */
 }

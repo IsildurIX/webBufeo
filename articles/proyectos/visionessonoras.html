@@ -12,14 +12,15 @@
 
 <body>
     <nav class="navbar navbar-light bg-white shadow-sm">
-        <div class="container d-flex justify-content-between align-items-center">
+        <div class="container-fluid d-flex justify-content-between align-items-center px-0">
             <a class="navbar-brand" href="../../index.html"><img src="../../assets/img/bufeo_logo.png"></a>
             <div class="d-flex align-items-center">
-                <button class="menu-button d-none d-md-block" id="openMenu"></button>
+                <button class="menu-button d-none d-sm-block" id="openMenu"></button>
                 <button class="hamburger-button d-block d-md-none" id="openHamburgerMenu">☰</button>
             </div>
         </div>
     </nav>
+
 
     <div class="menu-overlay" id="menuOverlay">
         <button class="btn btn-link text-white position-absolute top-0 end-0 mt-3 me-3" id="closeMenu"
@@ -29,8 +30,8 @@
                 aria-controls="submenu1">Exposiciones</a>
             <a href="#" class="menu-item" data-submenu="submenu2" role="menuitem" aria-expanded="false"
                 aria-controls="submenu2">Proyectos</a>
-            <a href="#" class="menu-item" data-submenu="submenu3" role="menuitem" aria-expanded="false"
-                aria-controls="submenu3">Publicaciones</a>
+            <a href="../publicaciones/publicaciones.html" class="menu-item" data-submenu="submenu3" role="menuitem"
+                aria-expanded="false" aria-controls="submenu3">Publicaciones</a>
             <a href="#" class="menu-item" data-submenu="submenu4" role="menuitem" aria-expanded="false"
                 aria-controls="submenu4">Gente Bufeo</a>
         </div>
@@ -41,38 +42,40 @@
             <a href="#" class="menu-item" role="menuitem" data-submenu="submenu1b">2017 - 2020</a>
             <a href="#" class="menu-item" role="menuitem" data-submenu="submenu1a">2021 - 2024</a>
         </div>
-
         <div id="submenu2" class="submenu" aria-labelledby="submenu2">
-            <a href="../proyectos/balsabufeo.html" class="menu-item" role="menuitem">Flotando La Balsa Bufeo</a>
+            <a href="../proyectos/balsabufeo.html" class="menu-item" role="menuitem">Flotando</a>
             <a href="#" class="menu-item" role="menuitem">Visiones sonoras</a>
-            <a href="#" class="menu-item" role="menuitem">Amazonismos</a>
-        </div>
-        <div id="submenu3" class="submenu" aria-labelledby="submenu3">
-            <a href="../libros/amazonistas.html" class="menu-item" role="menuitem">Amazonistas</a>
-            <a href="#" class="menu-item" role="menuitem">Subitem 3B</a>
-            <a href="#" class="menu-item" role="menuitem">Subitem 3C</a>
         </div>
 
         <div id="submenu1a" class="submenu" aria-labelledby="submenu1a">
-            <a href="../exposicion/metsanete.html" class="menu-item" role="menuitem">Metsa Nete</a>
-            <a href="../exposicion/largollanto.html" class="menu-item" role="menuitem">De su largo llanto</a>
-            <a href="../exposicion/laselvamisma.html" class="menu-item" role="menuitem">La selva misma</a>
+            <a href="../exposicion/metsanete.html" class="menu-item" role="menuitem">Metsá-Neté: el hermoso mundo
+                visionario de Chonon Bensho</a>
+            <a href="../exposicion/lugarespiritus.html" class="menu-item" role="menuitem">El lugar de los
+                Espíritus</a>
+            <a href="../exposicion/kenebo.html" class="menu-item" role="menuitem">Kenebo: cartografías de la
+                eco-cosmología shipibo-conibo</a>
         </div>
 
         <div id="submenu1b" class="submenu" aria-labelledby="submenu1b">
-            <a href="../exposicion/bosquemitos.html" class="menu-item" role="menuitem">El bosque de los mitos</a>
-            <a href="../exposicion/nochegardenias.html" class="menu-item" role="menuitem">La noche de las gardenias</a>
-            <a href="../exposicion/laselvamisma.html" class="menu-item" role="menuitem">La selva misma</a>
+            <a href="../exposicion/paisamazonas.html" class="menu-item" role="menuitem">En el país de las
+                Amazonas</a>
+            <a href="../exposicion/lagarzablanca.html" class="menu-item" role="menuitem">El clan de la Garza
+                blanca</a>
+            <a href="../exposicion/fotosociales.html" class="menu-item" role="menuitem">Fotosociales, retrato de
+                Iquitos</a>
         </div>
 
         <div id="submenu1c" class="submenu" aria-labelledby="submenu1c">
-            <a href="../exposicion/svss.html" class="menu-item" role="menuitem">SVSS</a>
-            <a href="#" class="menu-item" role="menuitem">El milagro verde</a>
-            <a href="../exposicion/laselvamisma.html" class="menu-item" role="menuitem">La selva misma</a>
+            <a href="../exposicion/largollanto.html" class="menu-item" role="menuitem">De su largo llanto se formó
+                el Amazonas</a>
+            <a href="../exposicion/laselvamisma.html" class="menu-item" role="menuitem">Calvo de Araujo, la selva
+                misma</a>
+            <a href="../exposicion/tierracreacion.html" class="menu-item" role="menuitem">La tierra donde dios no
+                culminó su creación</a>
         </div>
 
         <div id="submenu1d" class="submenu" aria-labelledby="submenu1d">
-            <a href="#" class="menu-item" role="menuitem">Poder Verde 1</a>
+            <a href="../exposicion/poderverde.html" class="menu-item" role="menuitem">Poder Verde</a>
             <a href="../exposicion/svss.html" class="menu-item" role="menuitem">Selva virgen, salvaje y sensual</a>
             <a href="../exposicion/milagroverde.html" class="menu-item" role="menuitem">El milagro verde</a>
         </div>
@@ -104,7 +107,7 @@
                 <div class="col-12 col-md-6 text-center mb-6">
                     <a href="#" class="video-thumb" data-video-id="GNBswp8Ej24">
                         <img src="https://img.youtube.com/vi/GNBswp8Ej24/maxresdefault.jpg"
-                            alt="Calvo de Araujo: la selva misma (2015)" class="img-fluid no-zoom">
+                            alt="Calvo de Araujo: la selva misma (2015)" class="img-fluid">
                     </a>
                     <p class="video-caption">
                         Calvo de Araujo: la selva misma (2015)
@@ -113,7 +116,7 @@
                 <div class="col-12 col-md-6 text-center mb-6">
                     <a href="#" class="video-thumb" data-video-id="_k3zby6oYv4">
                         <img src="https://img.youtube.com/vi/_k3zby6oYv4/maxresdefault.jpg" alt="Memoria vidente (2021)"
-                            class="img-fluid no-zoom">
+                            class="img-fluid">
                     </a>
                     <p class="video-caption">
                         Memoria vidente (2021)
@@ -131,7 +134,7 @@
 
                     <a href="#" class="video-thumb" data-video-id="DKVk6qw8z7o">
                         <img src="https://img.youtube.com/vi/DKVk6qw8z7o/maxresdefault.jpg"
-                            alt="AMAzonas de mitos y visiones (2022)" class="img-fluid no-zoom">
+                            alt="AMAzonas de mitos y visiones (2022)" class="img-fluid">
                     </a>
                     <p class="video-caption">
                         AMAzonas de mitos y visiones (2022)
@@ -139,17 +142,16 @@
                 </div>
                 <!-- Texto -->
                 <div class="col-12 col-md-6 text-center text-md-end">
-                    <p class="visiones-rosa-text">
+                    <a class="visiones-rosa-text" href="https://bicentenario.gob.pe/exposiciones/amazonas/#intro" target="_blank" rel="noopener noreferrer">
                         Conoce + aquí…
-                    </p>
+                    </a>
+
                 </div>
 
             </div>
 
         </div>
     </section>
-
-
 
     <!-- Modal para Zoom -->
     <!-- Modal para video -->
@@ -198,15 +200,7 @@
                     <h5>Todos los derechos reservados</h5>
                 </div>
                 <div class="col-12 col-sm-6 col-md-3">
-                    <h5>En alianza con:</h5>
-                    <ul class="list-unstyled d-flex align-items-center">
-                        <li class="me-3">
-                            <img src="../../assets/img/spda.jpg" alt="SPDA" class="logo-alianza spda-logo">
-                        </li>
-                        <li>
-                            <img src="../../assets/img/fbn.png" alt="FBN" class="logo-alianza fbn-logo">
-                        </li>
-                    </ul>
+                    
                 </div>
             </div>
         </div>
@@ -279,7 +273,7 @@
             e.stopPropagation();
         });
 
-        
+
 
         // ====== Modal de VIDEO YouTube ======
         const videoLinks = document.querySelectorAll('.video-thumb');

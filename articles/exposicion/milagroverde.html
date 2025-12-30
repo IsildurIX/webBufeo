@@ -11,18 +11,16 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-white shadow-sm px-4">
-        <a class="navbar-brand" href="../../index.html" aria-label="Bufeo, Amazonia y Arte">
-            Bufeo, Amazonia y Arte
-        </a>
-        <div class="d-flex align-items-center">
-            <button class="menu-button d-none d-md-block" id="openMenu" aria-label="Abrir menú"></button>
-            <button class="hamburger-button d-block d-md-none" id="openHamburgerMenu"
-                aria-label="Abrir menú hamburguesa">
-                ☰
-            </button>
+    <nav class="navbar navbar-light bg-white shadow-sm">
+        <div class="container-fluid d-flex justify-content-between align-items-center px-0">
+            <a class="navbar-brand" href="../../index.html"><img src="../../assets/img/bufeo_logo.png"></a>
+            <div class="d-flex align-items-center">
+                <button class="menu-button d-none d-sm-block" id="openMenu"></button>
+                <button class="hamburger-button d-block d-md-none" id="openHamburgerMenu">☰</button>
+            </div>
         </div>
     </nav>
+
 
     <div class="menu-overlay" id="menuOverlay">
         <button class="btn btn-link text-white position-absolute top-0 end-0 mt-3 me-3" id="closeMenu"
@@ -32,8 +30,8 @@
                 aria-controls="submenu1">Exposiciones</a>
             <a href="#" class="menu-item" data-submenu="submenu2" role="menuitem" aria-expanded="false"
                 aria-controls="submenu2">Proyectos</a>
-            <a href="#" class="menu-item" data-submenu="submenu3" role="menuitem" aria-expanded="false"
-                aria-controls="submenu3">Publicaciones</a>
+            <a href="../publicaciones/publicaciones.html" class="menu-item" data-submenu="submenu3" role="menuitem"
+                aria-expanded="false" aria-controls="submenu3">Publicaciones</a>
             <a href="#" class="menu-item" data-submenu="submenu4" role="menuitem" aria-expanded="false"
                 aria-controls="submenu4">Gente Bufeo</a>
         </div>
@@ -45,148 +43,140 @@
             <a href="#" class="menu-item" role="menuitem" data-submenu="submenu1a">2021 - 2024</a>
         </div>
         <div id="submenu2" class="submenu" aria-labelledby="submenu2">
-            <a href="../proyectos/balsabufeo.html" class="menu-item" role="menuitem">Flotando La Balsa Bufeo</a>
-            <a href="#" class="menu-item" role="menuitem">Visiones sonoras</a>
+            <a href="../proyectos/balsabufeo.html" class="menu-item" role="menuitem">Flotando</a>
+            <a href="../proyectos/visionessonoras.html" class="menu-item" role="menuitem">Visiones sonaras</a>
             <a href="#" class="menu-item" role="menuitem">Amazonismos</a>
-        </div>
-        <div id="submenu3" class="submenu" aria-labelledby="submenu3">
-            <a href="../libros/amazonistas.html" class="menu-item" role="menuitem">Amazonistas</a>
-            <a href="#" class="menu-item" role="menuitem">Subitem 3B</a>
-            <a href="#" class="menu-item" role="menuitem">Subitem 3C</a>
         </div>
 
         <div id="submenu1a" class="submenu" aria-labelledby="submenu1a">
-            <a href="../exposicion/metsanete.html" class="menu-item" role="menuitem">Metsá kené: el hermoso mundo visionario de Chonon Bensho</a>
-            <a href="../exposicion/lugarespiritus.html" class="menu-item" role="menuitem">El lugar de los Espíritus</a>
-            <a href="../exposicion/kenebo.html" class="menu-item" role="menuitem">Kenebo: cartografías de la eco-cosmología shipibo-conibo</a>
+            <a href="../exposicion/metsanete.html" class="menu-item" role="menuitem">Metsá kené: el hermoso mundo
+                visionario de Chonon Bensho</a>
+            <a href="../exposicion/lugarespiritus.html" class="menu-item" role="menuitem">El lugar de los
+                Espíritus</a>
+            <a href="../exposicion/kenebo.html" class="menu-item" role="menuitem">Kenebo: cartografías de la
+                eco-cosmología shipibo-conibo</a>
         </div>
 
         <div id="submenu1b" class="submenu" aria-labelledby="submenu1b">
-            <a href="../exposicion/paisamazonas.html" class="menu-item" role="menuitem">En el país de las Amazonas</a>
-            <a href="../exposicion/lagarzablanca.html" class="menu-item" role="menuitem">El clan de la Garza banca</a>
-            <a href="../exposicion/fotosociales.html" class="menu-item" role="menuitem">Fotosociales, retrato de Iquitos</a>
+            <a href="../exposicion/paisamazonas.html" class="menu-item" role="menuitem">En el país de las
+                Amazonas</a>
+            <a href="../exposicion/lagarzablanca.html" class="menu-item" role="menuitem">El clan de la Garza
+                blanca</a>
+            <a href="../exposicion/fotosociales.html" class="menu-item" role="menuitem">Fotosociales, retrato de
+                Iquitos</a>
         </div>
 
         <div id="submenu1c" class="submenu" aria-labelledby="submenu1c">
-            <a href="../exposicion/largollanto.html" class="menu-item" role="menuitem">De su largo llanto se formó el Amazonas</a>
-            <a href="../exposicion/laselvamisma.html" class="menu-item" role="menuitem">Calvo de Araujo, la selva misma</a>
-            <a href="../exposicion/tierracreacion.html" class="menu-item" role="menuitem">La tierra donde dios no culminó su creación</a>
+            <a href="../exposicion/largollanto.html" class="menu-item" role="menuitem">De su largo llanto se formó
+                el Amazonas</a>
+            <a href="../exposicion/laselvamisma.html" class="menu-item" role="menuitem">Calvo de Araujo, la selva
+                misma</a>
+            <a href="../exposicion/tierracreacion.html" class="menu-item" role="menuitem">La tierra donde dios no
+                culminó su creación</a>
         </div>
 
         <div id="submenu1d" class="submenu" aria-labelledby="submenu1d">
-            <a href="../exposicion/poderverde.html" class="menu-item" role="menuitem">Poder Verde 1</a>
+            <a href="../exposicion/poderverde.html" class="menu-item" role="menuitem">Poder Verde</a>
             <a href="../exposicion/svss.html" class="menu-item" role="menuitem">Selva virgen, salvaje y sensual</a>
             <a href="#" class="menu-item" role="menuitem">El milagro verde</a>
         </div>
     </div>
 
-    <!-- Fullscreen image section -->
-    <!-- Fullscreen image section -->
-    <div class="contenido-principal">
-        <div>
-            <h1>El Milagro Verde</h1>
-            <p>Curaduría: Christian Bendayán y Alfredo Villar<br>
-                Año: 2012<br>
-                Lugar: Sala Luis Miró Quesada Garland. Lima, Perú.
-            </p>
-            <p class="contenido-font">
-                La historia de la Amazonía sigue siendo desconocida para la mayoría de los peruanos. Empezar a contar la
-                historia de sus imágenes más bellas y poderosas, de sus más logradas visiones artísticas y de su más
-                notable pintura, es la intención de esta muestra. Estas historias son también una lucha contra el
-                olvido, el desprecio y la marginación que ha sufrido y aún padece el poblador amazónico. Al contar la
-                historia de su pintura pretendemos también penetrar en esa realidad profunda de los sueños y las
-                visiones que animan el corazón y el alma amazónica, realidad sin la cual la historia siempre sería
-                inconclusa, un frío esquema de sucesos y cronologías o de intereses y pugnas económicas.
-            </p>
-            <p class="contenido-font">
-                La historia de la pintura amazónica es también una historia que va más allá de los privilegios, es un
-                arte que no sólo es producido por los hijos de las familias afortunadas sino también por hombres y
-                mujeres humildes y sencillos, gente del pueblo, indígenas y ribereños. Es un arte que no sólo está hecho
-                para las galerías o el mercado sino que también vive en calles, malocas, discotecas y bares. Es un arte
-                vivo, colorido, desprejuiciado, libérrimo, excesivo y desbordante y esta es la primera vez que se
-                intenta un panorama de esta riqueza desconocida y olvidada por las historias del arte peruano y la
-                historia oficial.
-            </p>
-            <p class="contenido-font">
-                A través de los años el arte amazónico ha demostrado ser seductor para el mundo y el mercado y a la vez
-                conducir a la reflexión y a cuestionar ese mismo mercado al plantear nuevas relaciones entre el artista
-                y el público. Su historia es la de las luchas por conquistar la Amazonía a través de las imágenes
-                creadas por los propios amazónicos. Esta muestra es un reconocimiento de esta historia y un viaje que en
-                el fondo es un comienzo, una corriente que seguirá creciendo, fecunda, exuberante y fértil como los ríos
-                y la vida.
-            </p>
-            <p class="contenido-font">
-                Artistas: Otto Michael, José Sabogal, Camilo Blas, César Calvo de Araújo, Víctor Morey Peña, Manuel
-                Bernuy Ortiz, Nancy Dantas, Ashuco, Graciela Arias, Christian Bendayán, Lastenia Canayo, Víctor Churay,
-                Enrique Casanto, Teófilo Castillo, Américo Pinasco, Gerardo Petsaín, Pablo Amaringo, Fernando Sovero,
-                Luis Sakiray, Miguel Saavedra, Brus Rubio, Santiago Yahuarcani, Gino Ceccarelli, Diana Riesco, Elena
-                Valera, Eduardo Meza Saravia, Max limo, Yando Ríos, Lu.Cu.Ma., Harry Chávez, Rember Yahuarcani, Ángel
-                Chávez.
-            </p>
-        </div>
-    </div>
+    <main class="page-main">
 
-    <section class="contenido-grilla">
-        <div class="container">
-            <!-- Primera fila -->
-            <div class="row">
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
-                        src="../../assets/img/fondoblanco.png" alt="Imagen 1">
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img src="../../assets/img/imgExpo/08/50.jpg"
-                        alt="Imagen 2" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal"></div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
-                        src="../../assets/img/fondoblanco.png" alt="Imagen 3">
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img src="../../assets/img/imgExpo/08/51.jpg"
-                        alt="Imagen 4" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal"></div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
-                        src="../../assets/img/fondoblanco.png" alt="Imagen 5">
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img src="../../assets/img/imgExpo/08/52.jpg"
-                        alt="Imagen 6" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal"></div>
+
+        <section class="contenido-entrada">
+
+            <div class="container">
+                <h1>El Milagro Verde</h1>
+                <h3>Curadur&iacute;a: Christian Bendayán y Alfredo Villar</h3>
+                <p>Año: 2012<br>
+                    Lugar: Sala Luis Miró Quesada Garland. Lima, Perú
+                </p>
             </div>
-            <!-- Segunda fila -->
-            <div class="row">
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img src="../../assets/img/imgExpo/08/53.jpg"
-                        alt="Imagen 7" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal"></div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
-                        src="../../assets/img/fondoblanco.png" alt="Imagen 8">
+        </section>
+
+        <section class="expo-section">
+            <div class="expo-grid">
+                <div class="expo-col col-1">
+                    <div class="col1-block block-1">
+                        <img src="../../assets/img/imgExpo/08/milagro.jpeg" alt="">
+                        <img src="../../assets/img/imgExpo/08/50.jpg" alt="">
+                    </div>
+
+                    <div class="col1-block block-2">
+                        <img src="../../assets/img/imgExpo/08/51.jpg" alt="">
+                        <img src="../../assets/img/imgExpo/08/52.jpg" alt="">
+                    </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2" class="img-fluid" data-bs-toggle="modal"
-                    data-bs-target="#imageModal"><img src="../../assets/img/imgExpo/08/54.jpg" alt="Imagen 9">
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
-                        src="../../assets/img/fondoblanco.png" alt="Imagen 10">
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img src="../../assets/img/imgExpo/08/55.jpg"
-                        alt="Imagen 11" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal"></div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
-                        src="../../assets/img/fondoblanco.png" alt="Imagen 12">
+
+                <div class="expo-col col-2">
+                    <div class="col2-top">
+                        <img src="../../assets/img/imgExpo/08/53.jpg" alt="">
+                        <img src="../../assets/img/imgExpo/08/54.jpg" alt="">
+                    </div>
+
+                    <div class="col2-bottom">
+                        <img src="../../assets/img/imgExpo/08/55.jpg" alt="">
+                    </div>
                 </div>
             </div>
-            <!-- Tercera fila -->
-            <div class="row">
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
-                        src="../../assets/img/fondoblanco.png" alt="Imagen 13">
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
-                        src="../../assets/img/fondoblanco.png" alt="Imagen 14">
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
-                        src="../../assets/img/fondoblanco.png" alt="Imagen 15">
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img src="../../assets/img/imgExpo/08/56.jpg"
-                        alt="Imagen 16" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal"></div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
-                        src="../../assets/img/fondoblanco.png" alt="Imagen 17">
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
-                        src="../../assets/img/fondoblanco.png" alt="Imagen 18">
-                </div>
+        </section>
+
+        <section class="contenido-principal">
+            <div>
+                <p class="contenido-font">
+                    La historia de la Amazonía sigue siendo desconocida para la mayoría de los peruanos. Empezar a
+                    contar la
+                    historia de sus imágenes más bellas y poderosas, de sus más logradas visiones artísticas y de su más
+                    notable pintura, es la intención de esta muestra. Estas historias son también una lucha contra el
+                    olvido, el desprecio y la marginación que ha sufrido y aún padece el poblador amazónico. Al contar
+                    la
+                    historia de su pintura pretendemos también penetrar en esa realidad profunda de los sueños y las
+                    visiones que animan el corazón y el alma amazónica, realidad sin la cual la historia siempre sería
+                    inconclusa, un frío esquema de sucesos y cronologías o de intereses y pugnas económicas.
+                </p>
+                <p class="contenido-font">
+                    La historia de la pintura amazónica es también una historia que va más allá de los privilegios, es
+                    un
+                    arte que no sólo es producido por los hijos de las familias afortunadas sino también por hombres y
+                    mujeres humildes y sencillos, gente del pueblo, indígenas y ribereños. Es un arte que no sólo está
+                    hecho
+                    para las galerías o el mercado sino que también vive en calles, malocas, discotecas y bares. Es un
+                    arte
+                    vivo, colorido, desprejuiciado, libérrimo, excesivo y desbordante y esta es la primera vez que se
+                    intenta un panorama de esta riqueza desconocida y olvidada por las historias del arte peruano y la
+                    historia oficial.
+                </p>
+                <p class="contenido-font">
+                    A través de los años el arte amazónico ha demostrado ser seductor para el mundo y el mercado y a la
+                    vez
+                    conducir a la reflexión y a cuestionar ese mismo mercado al plantear nuevas relaciones entre el
+                    artista
+                    y el público. Su historia es la de las luchas por conquistar la Amazonía a través de las imágenes
+                    creadas por los propios amazónicos. Esta muestra es un reconocimiento de esta historia y un viaje
+                    que en
+                    el fondo es un comienzo, una corriente que seguirá creciendo, fecunda, exuberante y fértil como los
+                    ríos
+                    y la vida.
+                </p>
+                <p class="contenido-font">
+                    Artistas: Otto Michael, José Sabogal, Camilo Blas, César Calvo de Araújo, Víctor Morey Peña, Manuel
+                    Bernuy Ortiz, Nancy Dantas, Ashuco, Graciela Arias, Christian Bendayán, Lastenia Canayo, Víctor
+                    Churay,
+                    Enrique Casanto, Teófilo Castillo, Américo Pinasco, Gerardo Petsaín, Pablo Amaringo, Fernando
+                    Sovero,
+                    Luis Sakiray, Miguel Saavedra, Brus Rubio, Santiago Yahuarcani, Gino Ceccarelli, Diana Riesco, Elena
+                    Valera, Eduardo Meza Saravia, Max limo, Yando Ríos, Lu.Cu.Ma., Harry Chávez, Rember Yahuarcani,
+                    Ángel
+                    Chávez.
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
+
+    </main>
+
+
 
     <!-- Modal para Zoom -->
     <div class="modal fade-custom" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
@@ -210,12 +200,10 @@
     <footer class="bg-grishumo text-dark pt-4">
         <div class="container">
             <div class="row">
-                <!-- Primera columna -->
                 <div class="col-12 col-sm-6 col-md-3">
-                    <h5>Bufeo Amazon&iacute;a + arte</h5>
+                    <h5>Bufeo Amazonía + arte</h5>
                     <p>bufeo.amazoniayarte@gmail.com<br>+51 986 336 866</p>
                 </div>
-                <!-- Segunda columna -->
                 <div class="col-12 col-sm-6 col-md-3">
                     <h5>Redes Sociales:</h5>
                     <ul class="list-unstyled d-flex">
@@ -231,29 +219,16 @@
                         </li>
                     </ul>
                 </div>
-                <!-- Tercera columna -->
                 <div class="col-12 col-sm-6 col-md-3">
                     <h5>Todos los derechos reservados</h5>
                 </div>
-                <!-- Cuarta columna -->
                 <div class="col-12 col-sm-6 col-md-3">
-                    <h5>Con el apoyo de:</h5>
-                    <ul class="list-unstyled d-flex">
-                        <li class="me-3">
-                            <div class="col-md-6">
-                                <img src="../../assets/img/spda.jpg" alt="spdalogo" class="img-fluid">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="col-md-6">
-                                <img src="../../assets/img/spda.jpg" alt="spdalogo" class="img-fluid">
-                            </div>
-                        </li>
-                    </ul>
+                    
                 </div>
             </div>
         </div>
     </footer>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -322,7 +297,7 @@
         });
 
         // Selección de imágenes y elementos del modal
-        const images = document.querySelectorAll('.contenido-grilla img:not(.no-zoom)');
+        const images = document.querySelectorAll('.expo-grid img:not(.no-zoom)');
         const zoomedImage = document.getElementById('zoomedImage');
         const imageModal = document.getElementById('imageModal');
         const prevButton = document.getElementById('prevImage');

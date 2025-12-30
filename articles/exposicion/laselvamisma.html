@@ -11,18 +11,16 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-white shadow-sm px-4">
-        <a class="navbar-brand" href="../../index.html" aria-label="Bufeo, Amazonia y Arte">
-            Bufeo, Amazonia y Arte
-        </a>
-        <div class="d-flex align-items-center">
-            <button class="menu-button d-none d-md-block" id="openMenu" aria-label="Abrir menú"></button>
-            <button class="hamburger-button d-block d-md-none" id="openHamburgerMenu"
-                aria-label="Abrir menú hamburguesa">
-                ☰
-            </button>
+    <nav class="navbar navbar-light bg-white shadow-sm">
+        <div class="container-fluid d-flex justify-content-between align-items-center px-0">
+            <a class="navbar-brand" href="../../index.html"><img src="../../assets/img/bufeo_logo.png"></a>
+            <div class="d-flex align-items-center">
+                <button class="menu-button d-none d-sm-block" id="openMenu"></button>
+                <button class="hamburger-button d-block d-md-none" id="openHamburgerMenu">☰</button>
+            </div>
         </div>
     </nav>
+
 
     <div class="menu-overlay" id="menuOverlay">
         <button class="btn btn-link text-white position-absolute top-0 end-0 mt-3 me-3" id="closeMenu"
@@ -32,8 +30,8 @@
                 aria-controls="submenu1">Exposiciones</a>
             <a href="#" class="menu-item" data-submenu="submenu2" role="menuitem" aria-expanded="false"
                 aria-controls="submenu2">Proyectos</a>
-            <a href="#" class="menu-item" data-submenu="submenu3" role="menuitem" aria-expanded="false"
-                aria-controls="submenu3">Publicaciones</a>
+            <a href="../publicaciones/publicaciones.html" class="menu-item" data-submenu="submenu3" role="menuitem"
+                aria-expanded="false" aria-controls="submenu3">Publicaciones</a>
             <a href="#" class="menu-item" data-submenu="submenu4" role="menuitem" aria-expanded="false"
                 aria-controls="submenu4">Gente Bufeo</a>
         </div>
@@ -43,144 +41,135 @@
             <a href="#" class="menu-item" role="menuitem" data-submenu="submenu1c">2013 - 2016</a>
             <a href="#" class="menu-item" role="menuitem" data-submenu="submenu1b">2017 - 2020</a>
             <a href="#" class="menu-item" role="menuitem" data-submenu="submenu1a">2021 - 2024</a>
-        </div>s
-        <div id="submenu2" class="submenu" aria-labelledby="submenu2">
-            <a href="../proyectos/balsabufeo.html" class="menu-item" role="menuitem">Flotando La Balsa Bufeo</a>
-            <a href="#" class="menu-item" role="menuitem">Visiones sonoras</a>
-            <a href="#" class="menu-item" role="menuitem">Amazonismos</a>
         </div>
-        <div id="submenu3" class="submenu" aria-labelledby="submenu3">
-            <a href="../libros/amazonistas.html" class="menu-item" role="menuitem">Amazonistas</a>
-            <a href="#" class="menu-item" role="menuitem">Subitem 3B</a>
-            <a href="#" class="menu-item" role="menuitem">Subitem 3C</a>
+        <div id="submenu2" class="submenu" aria-labelledby="submenu2">
+            <a href="../proyectos/balsabufeo.html" class="menu-item" role="menuitem">Flotando</a>
+            <a href="../proyectos/visionessonoras.html" class="menu-item" role="menuitem">Visiones sonaras</a>
+            <a href="#" class="menu-item" role="menuitem">Amazonismos</a>
         </div>
 
         <div id="submenu1a" class="submenu" aria-labelledby="submenu1a">
-            <a href="../exposicion/metsanete.html" class="menu-item" role="menuitem">Metsá kené: el hermoso mundo visionario de Chonon Bensho</a>
-            <a href="../exposicion/lugarespiritus.html" class="menu-item" role="menuitem">El lugar de los Espíritus</a>
-            <a href="../exposicion/kenebo.html" class="menu-item" role="menuitem">Kenebo: cartografías de la eco-cosmología shipibo-conibo</a>
+            <a href="../exposicion/metsanete.html" class="menu-item" role="menuitem">Metsá kené: el hermoso mundo
+                visionario de Chonon Bensho</a>
+            <a href="../exposicion/lugarespiritus.html" class="menu-item" role="menuitem">El lugar de los
+                Espíritus</a>
+            <a href="../exposicion/kenebo.html" class="menu-item" role="menuitem">Kenebo: cartografías de la
+                eco-cosmología shipibo-conibo</a>
         </div>
 
         <div id="submenu1b" class="submenu" aria-labelledby="submenu1b">
-            <a href="../exposicion/paisamazonas.html" class="menu-item" role="menuitem">En el país de las Amazonas</a>
-            <a href="../exposicion/lagarzablanca.html" class="menu-item" role="menuitem">El clan de la Garza banca</a>
-            <a href="../exposicion/fotosociales.html" class="menu-item" role="menuitem">Fotosociales, retrato de Iquitos</a>
+            <a href="../exposicion/paisamazonas.html" class="menu-item" role="menuitem">En el país de las
+                Amazonas</a>
+            <a href="../exposicion/lagarzablanca.html" class="menu-item" role="menuitem">El clan de la Garza
+                blanca</a>
+            <a href="../exposicion/fotosociales.html" class="menu-item" role="menuitem">Fotosociales, retrato de
+                Iquitos</a>
         </div>
 
         <div id="submenu1c" class="submenu" aria-labelledby="submenu1c">
-            <a href="../exposicion/largollanto.html" class="menu-item" role="menuitem">De su largo llanto se formó el Amazonas</a>
-            <a href="#" class="menu-item" role="menuitem">Calvo de Araujo, la selva misma</a>
-            <a href="../exposicion/tierracreacion.html" class="menu-item" role="menuitem">La tierra donde dios no culminó su creación</a>
+            <a href="../exposicion/largollanto.html" class="menu-item" role="menuitem">De su largo llanto se formó
+                el Amazonas</a>
+            <a href="#" class="menu-item" role="menuitem">Calvo de Araujo, la selva
+                misma</a>
+            <a href="../exposicion/tierracreacion.html" class="menu-item" role="menuitem">La tierra donde dios no
+                culminó su creación</a>
         </div>
 
         <div id="submenu1d" class="submenu" aria-labelledby="submenu1d">
-            <a href="../exposicion/poderverde.html" class="menu-item" role="menuitem">Poder Verde 1</a>
+            <a href="../exposicion/poderverde.html" class="menu-item" role="menuitem">Poder Verde</a>
             <a href="../exposicion/svss.html" class="menu-item" role="menuitem">Selva virgen, salvaje y sensual</a>
             <a href="../exposicion/milagroverde.html" class="menu-item" role="menuitem">El milagro verde</a>
         </div>
     </div>
 
-    <!-- Fullscreen image section -->
-    <!-- Fullscreen image section -->
-    <div class="contenido-principal">
-        <div>
-            <h1>Calvo de Araujo: La selva misma</h1>
-            <p>
-                Curaduría: Christian Bendayán<br>
-                Centro Cultural Británico. Miraflores y San Juan de Lurigancho. Lima, Perú.
-            </p>
-            <p class="contenido-font">
-                El año 2015, se presentó, en las sedes de Miraflores y San Juan de Lurigancho del Centro Cultural
-                Británico, la muestra retrospectiva de la obra de César Calvo de Araújo (Yurimaguas 1914 - Lima 1970),
-                el más importante pintor amazónico del siglo XX. Esta muestra fue el resultado una amplia investigación
-                que permitió reunir gran parte de la prolífica producción del artista: óleos (tanto de retratos como de
-                paisajes), piezas escultóricas y archivos que revelaban su gran trayectoria de reconocimiento
-                internacional. Así también, esta exposición respondió a la urgencia de recuperar el legado de Calvo de
-                Araújo, pues no hay pintor amazónico de mayor trascendencia que él, dado que fue pionero en entender a
-                la Amazonía como un espacio para pensar, a partir del arte, en problemáticas y conflictos comunes y
-                transversales a toda la humanidad, instaurando así una tradición con la que los artistas de generaciones
-                posteriores estamos en deuda.
-            </p>
-            <p class="contenido-font">
-                La obra de Calvo de Araújo -pinturas, esculturas y en sus obras literarias y musicales- muestra las
-                dificultades que enfrentaban sus habitantes en esa época y representa una propuesta integral para la
-                Amazonía. Su obra es visionaria, debido a que, si bien, no estaba alineada a los valores convencionales
-                de tendencias artísticas de su tiempo, tomó en cuenta políticas sociales y culturales para la región,
-                sobre la conservación de sus recursos y el reconocimiento del valor de las comunidades indígenas que
-                viven en ella, una dimensión del Perú desconocida para su tiempo, pero que hoy en día, ha empezado a
-                revelarse con mayor claridad. Observar la obra de Calvo de Araújo es como contemplar ventanas abiertas
-                hacia la selva. Al ver a través de ellas, quedamos deslumbrados por un mundo que encarna belleza y que,
-                muy a pesar de estar amenazado y en constante peligro, mantiene viva la esperanza de toda una nación.
-            </p>
-            <p class="contenido-font">
-                La muestra se realizó bajo la curaduría de Christian Bendayán, quien contó con la asistencia curatorial
-                de Giuliana Vidarte y Alfredo Villar. Así también, esta contó con videos documentales y un catálogo
-                publicado.
-            </p>
-        </div>
-    </div>
+    <main class="page-main">
 
-    <section class="contenido-grilla">
-        <div class="container">
-            <!-- Primera fila -->
-            <div class="row">
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
-                        src="../../assets/img/fondoblanco.png" alt="Imagen 1">
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img src="../../assets/img/imgExpo/03/1.jpg"
-                        alt="Imagen 2" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal"></div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
-                        src="../../assets/img/fondoblanco.png" alt="Imagen 3">
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img src="../../assets/img/imgExpo/03/14.jpg"
-                        alt="Imagen 4" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal"></div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
-                        src="../../assets/img/fondoblanco.png" alt="Imagen 5">
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img src="../../assets/img/imgExpo/03/17.jpg"
-                        alt="Imagen 6" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal"></div>
+
+        <section class="contenido-entrada">
+
+            <div class="container">
+                <h1>Calvo de Araujo: La selva misma</h1>
+                <h3>Curadur&iacute;a: Christian Bendayán</h3>
+                <p>Año: 2015<br>
+                    Lugar: Galer&iacute;a John Harriman, CC. Británico. Lima, Perú
+                </p>
             </div>
-            <!-- Segunda fila -->
-            <div class="row">
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img src="../../assets/img/imgExpo/03/19.jpg"
-                        alt="Imagen 7" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal"></div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
-                        src="../../assets/img/fondoblanco.png" alt="Imagen 8">
+        </section>
+
+        <section class="expo-section">
+            <div class="expo-grid">
+                <div class="expo-col col-1">
+                    <div class="col1-block block-1">
+                        <img src="../../assets/img/imgExpo/03/22.jpg" alt="">
+                        <img src="../../assets/img/imgExpo/03/23.jpg" alt="">
+                    </div>
+
+                    <div class="col1-block block-2">
+                        <img src="../../assets/img/imgExpo/03/24.jpg" alt="">
+                        <img src="../../assets/img/imgExpo/03/28.jpg" alt="">
+                    </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2" class="img-fluid" data-bs-toggle="modal"
-                    data-bs-target="#imageModal"><img src="../../assets/img/imgExpo/03/3.jpg" alt="Imagen 9">
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
-                        src="../../assets/img/fondoblanco.png" alt="Imagen 10">
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img src="../../assets/img/imgExpo/03/6.jpg"
-                        alt="Imagen 11" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal"></div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
-                        src="../../assets/img/fondoblanco.png" alt="Imagen 12">
+
+                <div class="expo-col col-2">
+                    <div class="col2-top">
+                        <img src="../../assets/img/imgExpo/03/26.jpg" alt="">
+                        <img src="../../assets/img/imgExpo/03/27.jpg" alt="">
+                    </div>
+
+                    <div class="col2-bottom">
+                        <img src="../../assets/img/imgExpo/03/25.jpg" alt="">
+                    </div>
                 </div>
             </div>
-            <!-- Tercera fila -->
-            <div class="row">
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
-                        src="../../assets/img/fondoblanco.png" alt="Imagen 13">
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
-                        src="../../assets/img/fondoblanco.png" alt="Imagen 14">
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
-                        src="../../assets/img/fondoblanco.png" alt="Imagen 15">
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img src="../../assets/img/imgExpo/03/7.jpg"
-                        alt="Imagen 16" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal"></div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
-                        src="../../assets/img/fondoblanco.png" alt="Imagen 17">
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-2"><img class="no-zoom" data-hide="mobile"
-                        src="../../assets/img/fondoblanco.png" alt="Imagen 18">
-                </div>
+        </section>
+
+        <section class="contenido-principal">
+            <div>
+                <p class="contenido-font">
+                    La historia de la Amazonía peruana se ha escrito a partir de una serie de mitos superpuestos,
+                    violentamente, sobre las narrativas que ya existían en este territorio antes de las primeras
+                    expediciones de conquista e investigación científica europeas. Su memoria se ha propuesto sobre la
+                    base
+                    del desinterés, de la imposibilidad de generar diálogos, del desconocimiento del contexto y la
+                    incapacidad de reconocer la diferencia, llenando de sentido y significado ajeno todo lo que no era
+                    posible entender, situación que se repite aún hoy en día. En la Amazonía no hay amazonas, pero estas
+                    figuras mitológicas ―la configuración del territorio como femenino― han sido desde el inicio de los
+                    viajes de conquista la justificación para tomar posesión de la tierra, depredar sus recursos y
+                    sustentarlo todo a partir de visiones de desarrollo. En la región amazónica no hay “perros del
+                    hortelano”, pero esta categoría ha servido para desprestigiar posturas sólidas y legítimas de
+                    protección
+                    y defensa del territorio y su naturaleza ―aun cuando estas parecen ya no formar parte de la agenda
+                    del
+                    Estado― y simplificar una serie de conflictos sociales y políticos aun sin conclusión.
+                </p>
+                <p class="contenido-font">
+                    Esta exposición reúne obras de artistas peruanos y extranjeros que construyen narrativas
+                    alternativas a
+                    las de la historia oficial del Perú. Artífices que están creando propuestas sobre hechos cruciales
+                    de la
+                    historia de la Amazonía y sobre cómo estos han sido contados. El objetivo es resaltar la relevancia
+                    del
+                    vacío discursivo sobre la región amazónica, proponer actualizaciones de las visiones de conquista y
+                    descubrimiento, de la época del caucho y su guerra de imágenes y de los conflictos contemporáneos,
+                    para
+                    recuperar así ciertos hechos y volverlos a contar desde las voces de los que no han sido
+                    representados y
+                    desde las historias que han sido silenciadas.
+                </p>
+                <p class="contenido-font">
+                    Artistas: Christian Bendayán, Enrique Casanto, Yuri Castañeda, Jota Castro, Raimond Chaves y Gilda
+                    Mantilla, Dare Dovidjenko, Julio Guerrero, Thomas Hobbs, La Pleve, La Restinga, Nancy La Rosa,
+                    Lu.Cu.Ma., Julio Maldonado “Rawa”, Alfredo Márquez, Hervé Miloux, Cármen Reátegui, Segundo Candiño
+                    Reátegui, Brus Rubio, Olinda Silvano “Reshinjabe Inuma”, Elena Valera "Bawan Jisbe", Adán
+                    Vallecillo,
+                    Rember YahuarcanI, Santiago Yahuarcani, Moico Yaker
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
+
+    </main>
+
+
 
     <!-- Modal para Zoom -->
     <div class="modal fade-custom" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
@@ -204,12 +193,10 @@
     <footer class="bg-grishumo text-dark pt-4">
         <div class="container">
             <div class="row">
-                <!-- Primera columna -->
                 <div class="col-12 col-sm-6 col-md-3">
-                    <h5>Bufeo Amazon&iacute;a + arte</h5>
+                    <h5>Bufeo Amazonía + arte</h5>
                     <p>bufeo.amazoniayarte@gmail.com<br>+51 986 336 866</p>
                 </div>
-                <!-- Segunda columna -->
                 <div class="col-12 col-sm-6 col-md-3">
                     <h5>Redes Sociales:</h5>
                     <ul class="list-unstyled d-flex">
@@ -225,29 +212,16 @@
                         </li>
                     </ul>
                 </div>
-                <!-- Tercera columna -->
                 <div class="col-12 col-sm-6 col-md-3">
                     <h5>Todos los derechos reservados</h5>
                 </div>
-                <!-- Cuarta columna -->
                 <div class="col-12 col-sm-6 col-md-3">
-                    <h5>Con el apoyo de:</h5>
-                    <ul class="list-unstyled d-flex">
-                        <li class="me-3">
-                            <div class="col-md-6">
-                                <img src="../../assets/img/spda.jpg" alt="spdalogo" class="img-fluid">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="col-md-6">
-                                <img src="../../assets/img/spda.jpg" alt="spdalogo" class="img-fluid">
-                            </div>
-                        </li>
-                    </ul>
+                    
                 </div>
             </div>
         </div>
     </footer>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -316,7 +290,7 @@
         });
 
         // Selección de imágenes y elementos del modal
-        const images = document.querySelectorAll('.contenido-grilla img:not(.no-zoom)');
+        const images = document.querySelectorAll('.expo-grid img:not(.no-zoom)');
         const zoomedImage = document.getElementById('zoomedImage');
         const imageModal = document.getElementById('imageModal');
         const prevButton = document.getElementById('prevImage');
