@@ -287,7 +287,8 @@ footer {
   position: relative;
   background: url('../assets/img/fondo1.png') no-repeat center center;
   background-size: cover;
-  height: 100vh;
+  min-height: calc(100svh - var(--nav-h));
+  height: auto;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -304,13 +305,14 @@ footer {
 .text-overlay {
   position: relative;
   background: url('../assets/img/fondo2.jpg') no-repeat center center/cover;
-  height: 100vh;
+  height: auto;
+  min-height: calc(100svh - var(--nav-h));
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   text-align: center;
-  padding: 2rem;
+  padding: clamp(2rem, 6vh, 5rem) 1rem;
 }
 
 .text-overlay::before {
@@ -326,10 +328,11 @@ footer {
 
 .text-overlay h5 {
   position: relative;
-  font-size: 2rem;
+  font-size: clamp(18px, 4.8vw, 32px);
   font-family: 'Futura Md BT', sans-serif;
   color: #FF7B8E;
   z-index: 2;
+  margin: 0 0 1rem;
   text-align: start;
   line-height: 1.6;
 }
@@ -683,16 +686,6 @@ body {
 }
 
 
-*/
-
-
-/* 2) Héroe y overlay: NO alturas fijas; dejan crecer al contenido */
-.fullscreen-image,
-.text-overlay {
-  height: auto !important;
-  min-height: 60vh;
-}
-
 /* 3) Héroe alineado a la izquierda con margen controlado */
 .hero-container {
   display: flex;
@@ -754,19 +747,6 @@ body {
   line-height: 1.25;
 }
 
-/* 6) Antidesborde de palabras */
-.fullscreen-image,
-.hero-copy,
-.text-overlay {
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
-
-/* 7) Menú overlay: evitar que sus títulos gigantes creen scroll horizontal */
-.menu-overlay {
-  overflow-x: hidden;
-}
-
 .menu-overlay a {
   font-size: clamp(24px, 10vw, 56px);
   margin: .5rem 1rem;
@@ -779,52 +759,6 @@ canvas {
   max-width: 100%;
   height: auto;
   display: block;
-}
-
-/* ===== Bufeo – Altura extendida de secciones principales ===== */
-
-/* Altura mínima grande pero flexible */
-.fullscreen-image,
-.text-overlay {
-  min-height: calc(100vh - var(--nav-h));
-  height: auto !important;
-  /* permite crecer si el contenido es mayor */
-}
-
-/* Soporte moderno: usa 100svh (evita saltos en móvil) */
-@supports (height: 1svh) {
-
-  .fullscreen-image,
-  .text-overlay {
-    min-height: calc(100svh - var(--nav-h));
-  }
-}
-
-/* Desktop: casi pantalla completa */
-@media (min-width: 992px) {
-
-  .fullscreen-image,
-  .text-overlay {
-    min-height: calc(95svh - var(--nav-h));
-  }
-}
-
-/* Tablet: un poco más compacto */
-@media (min-width: 576px) and (max-width: 991.98px) {
-
-  .fullscreen-image,
-  .text-overlay {
-    min-height: calc(85svh - var(--nav-h));
-  }
-}
-
-/* Móvil: buena proporción sin forzar */
-@media (max-width: 575.98px) {
-
-  .fullscreen-image,
-  .text-overlay {
-    min-height: calc(80svh - var(--nav-h));
-  }
 }
 
 /* === Igualar tamaño entre contenido-grilla y contenido-principal === */
@@ -1141,7 +1075,6 @@ footer .fab {
   grid-template-columns: minmax(140px, 190px) minmax(0, 1fr);
   column-gap: 2rem;
   row-gap: 0.75rem;
-  /* ✅ separa perfectamente label + lista */
   padding: 1.2rem 0;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
@@ -1227,46 +1160,7 @@ footer .fab {
   display: block;
 }
 
-/* === Animación editorial al hacer scroll === */
 
-.bufeo-editorial__group {
-  opacity: 0;
-  transform: translateY(24px);
-  transition:
-    opacity 0.6s ease-out,
-    transform 0.6s ease-out;
-}
-
-/* Cuando entra en pantalla */
-.bufeo-editorial__group.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Pequeño stagger (retardo) para cada grupo */
-.bufeo-editorial__group:nth-of-type(1) {
-  transition-delay: 0.05s;
-}
-
-.bufeo-editorial__group:nth-of-type(2) {
-  transition-delay: 0.12s;
-}
-
-.bufeo-editorial__group:nth-of-type(3) {
-  transition-delay: 0.19s;
-}
-
-.bufeo-editorial__group:nth-of-type(4) {
-  transition-delay: 0.26s;
-}
-
-.bufeo-editorial__group:nth-of-type(5) {
-  transition-delay: 0.33s;
-}
-
-.bufeo-editorial__group:nth-of-type(6) {
-  transition-delay: 0.40s;
-}
 
 @media (max-width: 768px) {
   .bufeo-editorial__group {
@@ -1367,8 +1261,106 @@ footer .fab {
   margin-bottom: 0;
 }
 
+.timeline-mobile {
+  display: none;
+}
+
 /* responsive: en móvil, todo en una columna */
 @media (max-width: 768px) {
+
+  /* En móvil, ocultamos el grid antiguo */
+  .timeline-grid-8 {
+    display: none;
+  }
+
+  /* En móvil, mostramos el timeline nuevo */
+  .timeline-mobile {
+    display: block;
+    position: relative;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 10px 12px 30px;
+  }
+
+  /* Línea vertical centrada */
+  .timeline-mobile::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: #fff;
+    transform: translateX(-50%);
+    opacity: 0.95;
+  }
+
+  /* Cada item: 3 columnas (izq | centro | der) */
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 1fr 44px 1fr;
+    column-gap: 14px;
+    align-items: start;
+    margin: 26px 0;
+    position: relative;
+  }
+
+  /* Punto en el centro */
+  .timeline-dot {
+    grid-column: 2;
+    justify-self: center;
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    background: #fff;
+    margin-top: 18px;
+    /* ajusta para alinear con el año */
+  }
+
+  /* Contenido */
+  .timeline-content {
+    max-width: 180px;
+    /* ayuda a que se vea como la referencia */
+  }
+
+  .timeline-item.left .timeline-content {
+    grid-column: 1;
+    justify-self: end;
+    text-align: right;
+    padding-right: 4px;
+  }
+
+  .timeline-item.right .timeline-content {
+    grid-column: 3;
+    justify-self: start;
+    text-align: left;
+    padding-left: 4px;
+  }
+
+  /* Tipografía parecida a la referencia */
+  .timeline-content h3 {
+    font-family: 'Futura Md BT', sans-serif;
+    font-size: 2.1rem;
+    line-height: 1;
+    margin: 0 0 10px;
+    letter-spacing: 0.02em;
+  }
+
+  .timeline-content p {
+    font-family: 'Futura Light BT V1', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.35;
+    margin: 0;
+  }
+
+  /* El título en cursiva como en tu 2da imagen */
+  .timeline-content p em {
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+
 
   .timeline-grid-8 {
     gap: 24px;
