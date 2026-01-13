@@ -1489,3 +1489,60 @@ footer .fab {
   color: #FF7B8E;
   /* por si antes estaba relative */
 }
+
+/* ===== Gente Bufeo (hero) ===== */
+.gente-bufeo-hero {
+  /* que se sienta como una pantalla completa bajo el nav */
+  min-height: calc(100vh - var(--nav-h));
+  justify-content: center;
+  /* sobreescribe el flex-start del global */
+  align-items: center;
+  text-align: center;
+  padding-top: clamp(2rem, 6vh, 5rem);
+  padding-bottom: clamp(2rem, 8vh, 6rem);
+}
+
+.gente-bufeo-wrap {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.gente-bufeo-gif {
+  display: block;
+  width: min(420px, 70vw);
+  height: auto;
+  margin: 0 auto 2rem;
+}
+
+.gente-bufeo-title {
+  font-family: 'Futura Light BT V1', sans-serif;
+  font-size: clamp(2rem, 5.5vw, 3rem);
+  line-height: 1.1;
+  margin: 0 0 1.5rem;
+  color: #fff;
+  font-weight: 300;
+}
+
+.gente-bufeo-title em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.gente-bufeo-text {
+  color: #fff;
+}
+
+.gente-bufeo-sub {
+  font-family: 'Futura Md BT', sans-serif;
+  font-size: 1rem;
+  margin: 0 0 1rem;
+}
+
+.gente-bufeo-list {
+  font-family: 'Futura Md BT', sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 0;
+}
