@@ -1562,6 +1562,8 @@ footer .fab {
 
 .fullscreen-image h1 {
     font-family: 'Adam Bold', serif;
+    font-size: 3rem;
+  text-transform: uppercase;
 }
 
 .fullscreen-image h4,
