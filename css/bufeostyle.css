@@ -309,12 +309,6 @@ footer {
   padding: 2rem;
 }
 
-.fullscreen-image h1 {
-  font-size: 3rem;
-  font-family: 'Futura Md BT', sans-serif;
-  text-transform: uppercase;
-}
-
 .text-overlay {
   position: relative;
   background: url('../assets/img/fondo2.jpg') no-repeat center center/cover;
@@ -1561,12 +1555,12 @@ footer .fab {
 }
 
 .fullscreen-image h1 {
-    font-family: 'Adam Bold', serif;
-    font-size: 3rem;
+  font-family: 'Adam Bold', serif;
+  font-size: 3rem;
   text-transform: uppercase;
 }
 
 .fullscreen-image h4,
 .fullscreen-image h5 {
-    font-family: 'Montserrat SemiBold', sans-serif;
+  font-family: 'Montserrat SemiBold', sans-serif;
 }
